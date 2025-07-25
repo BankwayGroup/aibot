@@ -16,7 +16,6 @@ export function Contact() {
         url: 'https://www.linkedin.com/in/dev-zahir-54baa5376/',
       },
       {
-      {
         name: 'Github',
         url: 'https://github.com/devzahirx3',
       },
