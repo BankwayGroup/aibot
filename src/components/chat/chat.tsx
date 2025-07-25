@@ -272,7 +272,7 @@ const Chat = () => {
             animationDuration={1.5}
             label="Star"
             size={'sm'}
-            repoUrl="https://github.com/devzahirx3"
+            repoUrl="https://github.com/devzahirx3/DevZahir"
           />
         </div>
       </div>
