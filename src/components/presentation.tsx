@@ -18,16 +18,16 @@ export function Presentation() {
 
   return (
     <div className="flex flex-col items-center justify-center gap-4 p-4">
-<div className="relative w-[180px] h-[180px]">
+<div className="relative w-[180px] h-[180px] overflow-hidden rounded-full">
   <Image
     src={profile.src}
     alt="Profile picture of Dev Zahir"
     fill
-    style={{ objectFit: 'contain' }}
-    className="rounded-full"
+    className="object-cover translate-y-[-20px]" // move image upward
     priority
   />
 </div>
+
 
       </div>
       <motion.h1
