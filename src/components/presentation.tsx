@@ -10,13 +10,30 @@ export function Presentation() {
     name: 'Dev Zahir',
     age: '28 years old',
     location: 'Los Angeles, California',
-    // Add a newline character after the emoji
     description:
       "Hey 👋\nI'm Dev Zahir. I'm a fullstack developer who builds custom websites, bots, and backend systems. I work with Python, PHP, Go, and JavaScript — and I'm passionate about tech, automation, and building tools that actually solve problems.",
     src: '/profil-raph.png',
     fallbackSrc:
       'https://images.unsplash.com/photo-1610216705422-caa3fcb6d158?q=80&w=3560&auto=format&fit=crop&ixlib=rb-4.0.3',
   };
+
+  return (
+    <section className="text-center space-y-4 px-4">
+      <motion.img
+        src={profile.src}
+        onError={(e) => (e.currentTarget.src = profile.fallbackSrc)}
+        alt={profile.name}
+        className="w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 rounded-full object-cover mx-auto shadow-md"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.8 }}
+      />
+
+      <h1 className="text-xl font-semibold">{profile.name}</h1>
+      <p className="text-sm text-muted-foreground">{profile.location}</p>
+      <p className="whitespace-pre-line text-sm">{profile.description}</p>
+    </section>
+  );
 
   // Animation variants for text elements
   const textVariants = {
