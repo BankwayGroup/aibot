@@ -96,29 +96,11 @@ export default function WelcomeModal({ trigger }: WelcomeModalProps) {
                   </h3>
                   <p className="text-accent-foreground text-base leading-relaxed">
                     I'm so excited to present my{' '}
-                    <strong>brand new AI Assistant.</strong>
+                    brand new <strong>AI Assistant.</strong>
                     <br /> Whether you're a recruiter, a friend, family member,
                     or just curious, feel free to ask anything you want!
                   </p>
                 </div>
-
-                {/* Why section */}
-                <div className="space-y-3">
-                  <h3 className="text-primary flex items-center gap-2 text-xl font-semibold">
-                    Why ???
-                  </h3>
-                  <p className="text-accent-foreground text-base leading-relaxed">
-                    Traditional portfolios can be limiting. <br /> They can't
-                    adapt to every visitor's specific needs. <br /> My portfolio
-                    becomes{' '}
-                    <strong>
-                      exactly what you're interested in knowing about me and my
-                      work.
-                    </strong>
-                  </p>
-                </div>
-              </section>
-            </div>
 
             {/* Footer */}
             <div className="flex flex-col items-center px-8 pt-4 pb-0 md:pb-8">
