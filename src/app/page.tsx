@@ -87,71 +87,44 @@ export default function Home() {
     return () => typed.destroy();
   }, []);
 
-  // 🔄 Force light theme (prevent flashing / ensure consistency)
-  useEffect(() => {
-    setIsDark(false);
-    localStorage.setItem('theme', 'light');
-    document.documentElement.classList.add('light');
-    document.documentElement.classList.remove('dark');
-  }, []);
-}
+  // Variants (if you want to use them later)
+  const topElementVariants = {
+    hidden: { opacity: 0, y: -60 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { type: 'ease', duration: 0.8 },
+    },
+  };
 
+  const bottomElementVariants = {
+    hidden: { opacity: 0, y: 80 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { type: 'ease', duration: 0.8, delay: 0.2 },
+    },
+  };
 
-
-const toggleTheme = () => {
-  const newDark = !isDark;
-  setIsDark(newDark);
-  document.documentElement.classList.toggle('dark', newDark);
-  localStorage.setItem('theme', newDark ? 'dark' : 'light');
-
-  // Custom override for elements with data-darkstyle attribute
-  document.querySelectorAll<HTMLElement>('[data-darkstyle]').forEach(el => {
-    if (newDark) el.classList.add('dark');
-    else el.classList.remove('dark');
-  });
-};
-
-const topElementVariants = {
-  hidden: { opacity: 0, y: -60 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { type: 'ease', duration: 0.8 },
-  },
-};
-
-const bottomElementVariants = {
-  hidden: { opacity: 0, y: 80 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { type: 'ease', duration: 0.8, delay: 0.2 },
-  },
-};
-
-return (
-  <>
-    <div className="absolute top-6 right-8 z-20 flex items-center gap-2">
- 
-
-      <GithubButton
-        animationDuration={1.5}
-        label="Star"
-        size="sm"
-        repoUrl="https://github.com/devzahirx3/DevZahir"
-      />
-    </div>
-
+  return (
+    <>
+      <div className="absolute top-6 right-8 z-20 flex items-center gap-2">
+        <GithubButton
+          animationDuration={1.5}
+          label="Star"
+          size="sm"
+          repoUrl="https://github.com/devzahirx3/DevZahir"
+        />
+      </div>
 
       <div className="absolute top-6 left-6 z-20 flex flex-col items-start gap-2 sm:flex-row">
-  <button
-    onClick={() => (window.location.href = 'https://devzahir.com')}
-    className="relative flex cursor-pointer items-center gap-2 rounded-full border bg-white/30 px-4 py-1.5 text-sm font-medium text-black shadow-md backdrop-blur-lg transition hover:bg-white/60 dark:border-white dark:text-white dark:hover:bg-neutral-800"
-  >
-    <ArrowLeft className="h-5 w-5" />
-    Back
-  </button>
-
+        <button
+          onClick={() => (window.location.href = 'https://devzahir.com')}
+          className="relative flex cursor-pointer items-center gap-2 rounded-full border bg-white/30 px-4 py-1.5 text-sm font-medium text-black shadow-md backdrop-blur-lg transition hover:bg-white/60 dark:border-white dark:text-white dark:hover:bg-neutral-800"
+        >
+          <ArrowLeft className="h-5 w-5" />
+          Back
+        </button>
         <button
           onClick={() => goToChat('Are you looking for an internship?')}
           className="relative flex cursor-pointer items-center gap-2 rounded-full border bg-white/30 px-4 py-1.5 text-sm font-medium text-black shadow-md backdrop-blur-lg transition hover:bg-white/60 dark:border-white dark:text-white dark:hover:bg-neutral-800"
