@@ -8,7 +8,7 @@ export const getPresentation = tool({
   execute: async () => {
     return {
       presentation:
-        "I'm Raphael Giraud, a 21-year-old developer specializing in AI at 42 Paris. Formerly a high-level mountain biker, I now intern at LightOn AI in Paris. I'm passionate about AI, tech, Entrepreneurship and SaaS tech.",
+"I'm Dev Zahir, a 28-year-old full-stack developer based in California. Self-taught in Python, JavaScript, MySQL, Django, and more. Passionate about building real-world apps, hacking solutions, and leveling up daily without the AI hype. Hustling hard in web dev, backend systems, and scalable projects."
     };
   },
 });
