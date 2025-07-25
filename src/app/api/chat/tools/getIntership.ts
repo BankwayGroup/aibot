@@ -10,16 +10,16 @@ export const getInternship = tool({
 
 - 📅 **Duration**: 6-month internship starting **September 2025**
 - 🌍 **Location**: Preferably **San Francisco** or anywhere in the **United States**
-- 🧑‍💻 **Focus**: AI development, full-stack web apps, SaaS, agentic workflows
-- 🛠️ **Stack**: Python, React/Next.js, Tailwind CSS, TypeScript, GPT, RAG, etc.
-- 💼 **Visa**: I’m based in Paris 🇫🇷 so I might need **J-1 sponsorship**
-- ✅ **What I bring**: Real experience with secure on-prem GPTs (Lighton), deepsearch engines, custom RAG tools, and hackathon wins like **ETH Oxford** & **Paris Blockchain Week**
-- 🔥 I move fast, learn faster, and I’m HUNGRYYYYY for big challenges
+- 🧑‍💻 **Focus**: Full-stack web development, backend systems, database design, and scalable apps
+- 🛠️ **Stack**: Python, JavaScript, MySQL, Django, React/Next.js, Tailwind CSS, TypeScript — real-world tools I’m crushing daily
+- 💼 **Visa**: Based in **California, USA** — no sponsorship needed
+- ✅ **What I bring**: Solid experience building production-ready apps, strong database skills, debugging at 3AM, and winning hackathons like **ETH Oxford** & **Paris Blockchain Week**
+- 🔥 I move fast, learn faster, and I’m HUNGRYYYYY for big challenges — no AI buzzwords, just real code and hustle
 
 📬 **Contact me** via:
-- Email: raphaelgiraud12@gmail.com
-- LinkedIn: [linkedin.com/in/raphael-giraud](https://www.linkedin.com/in/raphael-giraud-ai/)
-- GitHub: [github.com/raphaelgiraud](https://github.com/toukoum)
+- Email: DevZahirLLC@gmail.com
+- LinkedIn: [linkedin.com/in/dev-zahir](https://www.linkedin.com/in/dev-zahir/)
+- GitHub: [github.com/devzahirx3](https://github.com/devzahirx3)
 
 Let's build cool shit together ✌️
     `;
