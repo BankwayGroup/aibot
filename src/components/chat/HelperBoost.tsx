@@ -57,7 +57,6 @@ const specialQuestions = [
   'What projects are you most proud of?',
   'What are your skills?',
   'How can I reach you?',
-  "What's the craziest thing you've ever done?",
 ];
 
 const questionsByCategory = [
@@ -91,20 +90,23 @@ const questionsByCategory = [
     questions: ['What projects are you most proud of?'],
   },
   {
-    id: 'skills',
-    name: 'Skills',
-    icon: GraduationCapIcon,
-    questions: [
-      'What are your skills?',
-      'How was your experience at École 42?',
-    ],
+id: 'skills',
+name: 'Skills',
+icon: GraduationCapIcon,
+questions: [
+  'What programming languages and technologies are you proficient in?',
+  'Can you describe your experience working with full-stack development?',
+  'How do you approach debugging and problem-solving in your projects?',
+  'What development tools and workflows do you prefer?',
+  'Have you contributed to any open-source projects or collaborated in teams?',
+],
+
   },
   {
     id: 'fun',
     name: 'Fun',
     icon: PartyPopper,
     questions: [
-      "What's the craziest thing you've ever done?",
       'Mac or PC?',
       'What are you certain about that 90% get wrong?',
     ],
