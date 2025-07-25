@@ -18,15 +18,16 @@ export function Presentation() {
 
   return (
     <div className="flex flex-col items-center justify-center gap-4 p-4">
-<div className="relative w-[180px] h-[180px] overflow-hidden rounded-full">
+<div className="relative w-[160px] h-[160px] sm:w-[200px] sm:h-[200px] md:w-[240px] md:h-[240px]">
   <Image
     src={profile.src}
-    alt="Profile picture of Dev Zahir"
+    alt="Profile"
     fill
-    className="object-cover translate-y-[-35px] scale-[1.2]"
-    priority
+    style={{ objectFit: 'contain' }}
+    className="rounded-full shadow-md"
   />
 </div>
+
 
 
       </div>
