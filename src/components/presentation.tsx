@@ -18,10 +18,6 @@ export function Presentation() {
       'https://images.unsplash.com/photo-1610216705422-caa3fcb6d158?q=80&w=3560&auto=format&fit=crop&ixlib=rb-4.0.3',
   };
 
-  // rest of your component code...
-}
-
-
   // Animation variants for text elements
   const textVariants = {
     hidden: { opacity: 0, y: 20 },
@@ -107,7 +103,7 @@ export function Presentation() {
             transition={{ delay: 0.6, duration: 0.5 }}
             className="mt-4 flex flex-wrap gap-2"
           >
-{['Fullstack Developer', 'Bot Builder', 'Web Dev', 'Freelancer', 'Tech Enthusiast'].map(
+            {['AI', 'Developer', '42 Paris', 'Sport', 'SaaS Builder'].map(
               (tag) => (
                 <span
                   key={tag}
