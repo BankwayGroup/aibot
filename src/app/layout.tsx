@@ -72,7 +72,7 @@ keywords: [
   twitter: {
     card: "summary_large_image",
     title: "DevZahir Portfolio",
-    description: "Interactive portfolio with an AI-powered Memoji that answers questions about me",
+    description: "Interactive portfolio by Dev Zahir LLC",
     creator: "@Devzahirx3",
   },
   icons: {
