@@ -50,19 +50,28 @@ interface AvatarProps {
 const Avatar = dynamic<AvatarProps>(
   () =>
     Promise.resolve(({ hasActiveTool, videoRef, isTalking }: AvatarProps) => {
+      const [showImage, setShowImage] = useState(true);
+
+      useEffect(() => {
+        const timer = setTimeout(() => {
+          setShowImage(false);
+        }, 5000); // fade out after 5 seconds
+
+        return () => clearTimeout(timer);
+      }, []);
+
       const isIOS = () => {
-  const userAgent = window.navigator.userAgent;
-  const platform = window.navigator.platform;
-  const maxTouchPoints = window.navigator.maxTouchPoints || 0;
+        const userAgent = window.navigator.userAgent;
+        const platform = window.navigator.platform;
+        const maxTouchPoints = window.navigator.maxTouchPoints || 0;
 
-  const isIOSByUA = /iPad|iPhone|iPod/.test(userAgent);
-  const isIOSByPlatform = /iPad|iPhone|iPod/.test(platform);
-  const isIPadOS = platform === 'MacIntel' && maxTouchPoints > 1;
-  const isSafari = /Safari/.test(userAgent) && !/Chrome/.test(userAgent);
+        const isIOSByUA = /iPad|iPhone|iPod/.test(userAgent);
+        const isIOSByPlatform = /iPad|iPhone|iPod/.test(platform);
+        const isIPadOS = platform === 'MacIntel' && maxTouchPoints > 1;
+        const isSafari = /Safari/.test(userAgent) && !/Chrome/.test(userAgent);
 
-  return isIOSByUA || isIOSByPlatform || isIPadOS || isSafari;
-};
-
+        return isIOSByUA || isIOSByPlatform || isIPadOS || isSafari;
+      };
 
       return (
         <div
@@ -74,13 +83,19 @@ const Avatar = dynamic<AvatarProps>(
             className="relative cursor-pointer"
             onClick={() => (window.location.href = '/')}
           >
-<img
-  src="/landing-memojis.png"
-  alt="avatar"
-className="max-h-32 max-w-32 object-contain"
-/>
-
-
+            <AnimatePresence>
+              {showImage && (
+                <motion.img
+                  src="/landing-memojis.png"
+                  alt="avatar"
+                  className="max-h-32 max-w-32 object-contain"
+                  initial={{ opacity: 1 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 1 }}
+                />
+              )}
+            </AnimatePresence>
           </div>
         </div>
       );
