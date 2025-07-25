@@ -152,61 +152,42 @@ const ProjectContent = ({ project }: { project: ProjectProps }) => {
     </div>
   );
 };
-
-// Main data export with updated content
+// Main data export with updated content (no images as requested)
 export const data = [
   {
-    category: 'Startup Project',
-    title: 'Synto',
-    src: '/syntopreview.png',
-    content: <ProjectContent project={{ title: 'Synto' }} />,
+    category: 'AI Project',
+    title: 'SmartChat AI Assistant',
+    src: '', // No image
+    content: <ProjectContent project={{ title: 'SmartChat AI Assistant' }} />,
   },
   {
-    category: 'Fun Tool',
-    title: 'Rrate',
-    src: '/ratepreview.png',
-    content: <ProjectContent project={{ title: 'Rrate' }} />,
+    category: 'Community Tools',
+    title: 'Discord Bot for Community Management',
+    src: '',
+    content: <ProjectContent project={{ title: 'Discord Bot for Community Management' }} />,
   },
   {
-    category: 'Hackathon Winner',
-    title: 'Defai',
-    src: '/defaipreview.png',
-    content: <ProjectContent project={{ title: 'Defai' }} />,
+    category: 'Forum Customization',
+    title: 'Flarum Forum Customization',
+    src: '',
+    content: <ProjectContent project={{ title: 'Flarum Forum Customization' }} />,
   },
   {
-    category: 'Hackathon Winner',
-    title: 'Fitgear',
-    src: '/fitgearpreview.png',
-    content: <ProjectContent project={{ title: 'Fitgear' }} />,
+    category: 'Portfolio',
+    title: 'Personal Portfolio Website',
+    src: '',
+    content: <ProjectContent project={{ title: 'Personal Portfolio Website' }} />,
   },
   {
-    category: 'Business Intelligence',
-    title: 'Datai',
-    src: '/dataipreview.png',
-    content: <ProjectContent project={{ title: 'Datai' }} />,
-  },
-  {
-    category: '42 Project',
-    title: '3d Pong Game',
-    src: '/transcendancepreview.png',
-    content: <ProjectContent project={{ title: '3d Pong Game' }} />,
-  },
-  {
-    category: '42 Project',
-    title: 'Minishell',
-    src: '/minishellpreview.png',
-    content: <ProjectContent project={{ title: 'Minishell' }} />,
+    category: 'E-commerce',
+    title: 'Shopify Store Setup & Customization',
+    src: '',
+    content: <ProjectContent project={{ title: 'Shopify Store Setup & Customization' }} />,
   },
   {
     category: 'Automation',
-    title: 'YouBot',
-    src: '/youbotpreview.png',
-    content: <ProjectContent project={{ title: 'YouBot' }} />,
-  },
-  {
-    category: 'Web Development',
-    title: 'Old Portfolio',
-    src: '/oldportfoliopreview.png',
-    content: <ProjectContent project={{ title: 'Old Portfolio' }} />,
+    title: 'Telegram Bot for Event Notifications',
+    src: '',
+    content: <ProjectContent project={{ title: 'Telegram Bot for Event Notifications' }} />,
   },
 ];
