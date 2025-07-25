@@ -13,7 +13,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "DevZahir Portfolio",
+  title: "DevZahir AI",
   description: "@2025",
 keywords: [
   "DevZahir",
