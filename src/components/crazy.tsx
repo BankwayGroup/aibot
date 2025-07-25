@@ -7,10 +7,9 @@ const Crazy = () => {
     <div className="mx-auto w-full">
       <div className="mb-8">
         <h2 className="text-foreground text-3xl font-semibold md:text-4xl">
-          My Real Journey
+          My Personal Journey
         </h2>
         <p className="mt-4 text-muted-foreground">
-          I never climbed mountains or competed in sports — but my journey has been every bit as intense.
           I’m a self-taught full-stack developer, pianist, skater, gym rat, and deep thinker. No mentors. 
           No shortcuts. Just late nights, broken code, sore hands, and an obsession with getting better.
         </p>
