@@ -58,19 +58,19 @@ keywords: [
       url: "https://DevZahir.com",
     },
   ],
-  creator: "@2025",
+  creator: "DevZahir",
   openGraph: {
     type: "website",
     locale: "en_US",
     url: "https://DevZahir.com",
     title: "AI Portfolio",
-    description: "Interactive portfolio by Dev Zahir LLC",
+    description: "2025 © Dev Zahir",
     siteName: "DevZahir Portfolio",
   },
   twitter: {
     card: "summary_large_image",
     title: "AI Portfolio",
-    description: "Interactive portfolio by Dev Zahir LLC",
+    description: "2025 © Dev Zahir",
     creator: "@Devzahirx3",
   },
   icons: {
