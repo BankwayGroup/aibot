@@ -136,17 +136,7 @@ export default function Home() {
         </h1>
       </motion.div>
 
-      {/* centre memoji */}
-      <div className="relative z-10 h-52 w-48 overflow-hidden sm:h-72 sm:w-72">
-        <Image
-          src="/landing-memojis.png"
-          alt="Hero memoji"
-          width={2000}
-          height={2000}
-          priority
-          className="translate-y-14 scale-[2] object-cover"
-        />
-      </div>
+
 
       {/* input + quick buttons */}
       <motion.div
