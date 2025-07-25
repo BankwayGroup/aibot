@@ -1,4 +1,5 @@
 'use client';
+import { ArrowLeft } from 'lucide-react';
 
 import FluidCursor from '@/components/FluidCursor';
 import { Button } from '@/components/ui/button';
