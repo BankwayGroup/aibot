@@ -5,6 +5,8 @@ import dynamic from 'next/dynamic';
 import { useSearchParams } from 'next/navigation';
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { toast } from 'sonner';
+import { ArrowLeft } from 'lucide-react'; // If you want a left arrow icon, else use any icon or text
+
 
 // Component imports
 import ChatBottombar from '@/components/chat/chat-bottombar';
@@ -293,49 +295,60 @@ const Chat = () => {
           />
         </div>
       </div>
-
-      {/* Fixed Avatar Header with Gradient */}
-      <div
-        className="fixed top-0 right-0 left-0 z-50"
-        style={{
-          background:
-            'linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.95) 30%, rgba(255, 255, 255, 0.8) 50%, rgba(255, 255, 255, 0) 100%)',
-        }}
+{/* Fixed Avatar Header with Gradient */}
+<div
+  className="fixed top-0 right-0 left-0 z-50"
+  style={{
+    background:
+      'linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.95) 30%, rgba(255, 255, 255, 0.8) 50%, rgba(255, 255, 255, 0) 100%)',
+  }}
+>
+  <div
+    className={`transition-all duration-300 ease-in-out ${hasActiveTool ? 'pt-6 pb-0' : 'py-6'}`}
+  >
+    {/* Back Button */}
+    <div className="px-4 mb-2">
+      <button
+        onClick={() => window.history.back()}
+        className="flex items-center gap-2 rounded px-3 py-1.5 text-sm font-medium hover:bg-gray-100"
       >
-        <div
-          className={`transition-all duration-300 ease-in-out ${hasActiveTool ? 'pt-6 pb-0' : 'py-6'}`}
-        >
-          <div className="flex justify-center">
-            <ClientOnly>
-              <Avatar
-                hasActiveTool={hasActiveTool}
-                videoRef={videoRef}
-                isTalking={isTalking}
-              />
-            </ClientOnly>
-          </div>
+        <ArrowLeft className="h-5 w-5" />
+        Back
+      </button>
+    </div>
 
-          <AnimatePresence>
-            {latestUserMessage && !currentAIMessage && (
-              <motion.div
-                {...MOTION_CONFIG}
-                className="mx-auto flex max-w-3xl px-4"
-              >
-                <ChatBubble variant="sent">
-                  <ChatBubbleMessage>
-                    <ChatMessageContent
-                      message={latestUserMessage}
-                      isLast={true}
-                      isLoading={false}
-                      reload={() => Promise.resolve(null)}
-                    />
-                  </ChatBubbleMessage>
-                </ChatBubble>
-              </motion.div>
-            )}
-          </AnimatePresence>
-        </div>
-      </div>
+    <div className="flex justify-center">
+      <ClientOnly>
+        <Avatar
+          hasActiveTool={hasActiveTool}
+          videoRef={videoRef}
+          isTalking={isTalking}
+        />
+      </ClientOnly>
+    </div>
+
+    <AnimatePresence>
+      {latestUserMessage && !currentAIMessage && (
+        <motion.div
+          {...MOTION_CONFIG}
+          className="mx-auto flex max-w-3xl px-4"
+        >
+          <ChatBubble variant="sent">
+            <ChatBubbleMessage>
+              <ChatMessageContent
+                message={latestUserMessage}
+                isLast={true}
+                isLoading={false}
+                reload={() => Promise.resolve(null)}
+              />
+            </ChatBubbleMessage>
+          </ChatBubble>
+        </motion.div>
+      )}
+    </AnimatePresence>
+  </div>
+</div>
+
 
       {/* Main Content Area */}
       <div className="container mx-auto flex h-full max-w-3xl flex-col">
