@@ -2,12 +2,11 @@
 import { tool } from "ai";
 import { z } from "zod";
 
-
 export const getCrazy = tool({
   description:
-    "This tool will the craziest thing I've ever done. use it when the user ask someting like : 'What the craziest thing you've ever done?'",
+    "This tool shares something wild and unique about me. Use it when the user asks something like: 'What’s the craziest thing you've ever done?'",
   parameters: z.object({}),
   execute: async () => {
-    return "Above is a photo of Me On top of Mont Blanc, the highest mountain in the Alps and the highest in Europe. I made it with a friends of mine without guide, it was a great experience! You can see the 80km/h of wind on the photo! I made a youtube video of this adventure here: https://www.youtube.com/watch?v=rufGMSgzUOk&ab_channel=Toukoum";
+    return "I’m all about pushing limits in my own way — whether it’s skating through empty streets at night, teaching myself piano and coding from scratch, or grinding daily at the gym and meditation to stay sharp. No guides, no shortcuts — just pure dedication and flow. Every day’s an adventure.";
   },
 });
