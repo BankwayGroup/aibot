@@ -9,12 +9,12 @@ const LifeJourney = () => {
         <h2 className="text-foreground text-3xl font-semibold md:text-4xl">
           My Personal Journey
         </h2>
-        <p className="mt-4 text-muted-foreground">
-          I’m a fully self-taught developer and creator. I didn’t come through a university or bootcamp — everything I know, 
-          I taught myself. My path started with raw curiosity: figuring out how things worked under the hood. I started 
-          reverse-engineering websites, experimenting with small browser scripts, and writing simple automation tools before 
-          I even knew what “full stack” meant.
-        </p>
+<p className="mt-4 text-muted-foreground">
+  I’m a passionate developer and creator who blends self-taught grit with formal education.  
+  While I earned my bachelor’s degree online from University of Phoenix, most of my real skills come from raw curiosity and hands-on learning.  
+  I started by reverse-engineering websites, experimenting with browser scripts, and building automation tools — all before I even knew what “full stack” meant.
+</p>
+
 
         <p className="mt-4 text-muted-foreground">
           Over time, I pushed further — from static HTML to React apps, from Discord bots to backend APIs, and eventually 
