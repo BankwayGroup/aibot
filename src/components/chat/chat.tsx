@@ -51,18 +51,18 @@ const Avatar = dynamic<AvatarProps>(
   () =>
     Promise.resolve(({ hasActiveTool, videoRef, isTalking }: AvatarProps) => {
       const isIOS = () => {
-        const userAgent = window.navigator.userAgent;
-        const platform = window.navigator.platform;
-        const maxTouchPoints = window.navigator.maxTouchPoints || 0;
+  const userAgent = window.navigator.userAgent;
+  const platform = window.navigator.platform;
+  const maxTouchPoints = window.navigator.maxTouchPoints || 0;
 
-        const isIOSByUA = /iPad|iPhone|iPod/.test(userAgent) && !window.MSStream;
-        const isIOSByPlatform = /iPad|iPhone|iPod/.test(platform);
-        const isIPadOS =
-          platform === 'MacIntel' && maxTouchPoints > 1 && !window.MSStream;
-        const isSafari = /Safari/.test(userAgent) && !/Chrome/.test(userAgent);
+  const isIOSByUA = /iPad|iPhone|iPod/.test(userAgent);
+  const isIOSByPlatform = /iPad|iPhone|iPod/.test(platform);
+  const isIPadOS = platform === 'MacIntel' && maxTouchPoints > 1;
+  const isSafari = /Safari/.test(userAgent) && !/Chrome/.test(userAgent);
 
-        return isIOSByUA || isIOSByPlatform || isIPadOS || isSafari;
-      };
+  return isIOSByUA || isIOSByPlatform || isIPadOS || isSafari;
+};
+
 
       return (
         <div
