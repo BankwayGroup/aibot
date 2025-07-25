@@ -52,7 +52,6 @@ const questionConfig = [
 
 // Helper drawer data
 const specialQuestions = [
-  'Mountain Bike you said?? Show me!',
   'Who are you?',
   'Can I see your resume?',
   'What projects are you most proud of?',
@@ -105,7 +104,6 @@ const questionsByCategory = [
     name: 'Fun',
     icon: PartyPopper,
     questions: [
-      'Mountain Bike you said?? Show me!',
       "What's the craziest thing you've ever done?",
       'Mac or PC?',
       'What are you certain about that 90% get wrong?',
