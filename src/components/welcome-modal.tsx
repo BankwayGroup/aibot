@@ -69,10 +69,10 @@ export default function WelcomeModal({ trigger }: WelcomeModalProps) {
             <DialogHeader className="relative flex flex-row items-start justify-between px-8 pt-8 pb-6">
               <div>
                 <DialogTitle className="flex items-center gap-2 text-4xl font-bold tracking-tight">
-                  Welcome to AI Portfolio
+                  Welcome to AI Zahir
                 </DialogTitle>
                 <DialogDescription className="mt-2 text-base">
-                  {/*My interactive AI portfolio experience*/}
+                  {/*My interactive AI portfolio assistant*/}
                 </DialogDescription>
               </div>
               <Button
@@ -92,11 +92,11 @@ export default function WelcomeModal({ trigger }: WelcomeModalProps) {
                 {/* What section */}
                 <div className="space-y-3">
                   <h3 className="text-primary flex items-center gap-2 text-xl font-semibold">
-                    What's ????
+                    Welcome!
                   </h3>
                   <p className="text-accent-foreground text-base leading-relaxed">
                     I'm so excited to present my{' '}
-                    <strong>brand new AI Portfolio.</strong>
+                    <strong>brand new AI Assistant.</strong>
                     <br /> Whether you're a recruiter, a friend, family member,
                     or just curious, feel free to ask anything you want!
                   </p>
