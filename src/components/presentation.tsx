@@ -13,9 +13,35 @@ export function Presentation() {
     description:
       "Hey 👋\nI'm Dev Zahir. I'm a fullstack developer who builds custom websites, bots, and backend systems. I work with Python, PHP, Go, and JavaScript — and I'm passionate about tech, automation, and building tools that actually solve problems.",
     src: '/profil-raph.png',
-    fallbackSrc:
-      'https://images.unsplash.com/photo-1610',
+    fallbackSrc: 'https://images.unsplash.com/photo-1610',
   };
+
+  return (
+    <div className="flex flex-col items-center justify-center gap-4 p-4">
+      <div className="relative w-[280px] h-[280px] sm:w-[320px] sm:h-[320px]">
+        <Image
+          src={profile.src}
+          alt="Profile picture of Dev Zahir"
+          fill
+          style={{ objectFit: 'contain' }}
+          className="rounded-full"
+          priority
+        />
+      </div>
+      <motion.h1
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        className="text-2xl font-bold text-center"
+      >
+        {profile.name}
+      </motion.h1>
+      <p className="text-center text-sm text-gray-600 whitespace-pre-line">
+        {profile.description}
+      </p>
+    </div>
+  );
+
 
   return (
     <section className="text-center space-y-4 px-4">
