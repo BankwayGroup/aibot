@@ -129,12 +129,7 @@ const bottomElementVariants = {
 return (
   <>
     <div className="absolute top-6 right-8 z-20 flex items-center gap-2">
-      <button
-        onClick={toggleTheme}
-        className="rounded-xl border border-border bg-background px-3 py-1 text-sm font-medium text-foreground shadow hover:bg-muted transition-all"
-      >
-        {isDark ? '☀️ Light' : '🌙 Dark'}
-      </button>
+ 
 
       <GithubButton
         animationDuration={1.5}
@@ -186,11 +181,9 @@ return (
           <h2 className="text-secondary-foreground mt-1 text-xl font-semibold md:text-2xl">
             Hey, I'm Dev Zahir 👋
           </h2>
-   <span
-  ref={typedRef}
-  className="inline-block min-w-[24ch] whitespace-nowrap"
-  style={{ display: 'inline-block' }}
-/>
+<h1 className="text-4xl font-bold sm:text-5xl md:text-6xl lg:text-7xl">
+  <span ref={typedRef} className="inline-block" />
+</h1>
 
         </motion.div>
 
