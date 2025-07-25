@@ -77,7 +77,7 @@ const Avatar = dynamic<AvatarProps>(
 <img
   src="/landing-memojis.png"
   alt="avatar"
-  className="max-h-24 max-w-24 object-contain"
+className="max-h-32 max-w-32 object-contain"
 />
 
 
