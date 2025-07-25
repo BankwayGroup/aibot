@@ -96,7 +96,7 @@ export default function WelcomeModal({ trigger }: WelcomeModalProps) {
                   </h3>
                   <p className="text-accent-foreground text-base leading-relaxed">
                     I'm so excited to present my{' '}
-                    <br></br><strong>AI Assistant 👋</strong>
+                    <br></br><strong>👋 AI Assistant</strong>
                     <br/> Whether you're a recruiter, a friend, family member,
                     or just curious, feel free to ask anything you want!
                   </p>
