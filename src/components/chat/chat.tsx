@@ -74,11 +74,12 @@ const Avatar = dynamic<AvatarProps>(
             className="relative cursor-pointer"
             onClick={() => (window.location.href = '/')}
           >
-   <img
+<img
   src="/landing-memojis.png"
   alt="avatar"
-  className="max-h-12 max-w-12 object-contain"
+  className="max-h-24 max-w-24 object-contain"
 />
+
 
           </div>
         </div>
