@@ -41,42 +41,42 @@ export default function Home() {
   const inputRef = useRef<HTMLInputElement>(null);
   const typedRef = useRef(null);
   const router = useRouter();
+  const [isDark, setIsDark] = useState(false);
 
   const goToChat = (query: string) =>
     router.push(`/chat?query=${encodeURIComponent(query)}`);
 
   useEffect(() => {
     const typed = new Typed(typedRef.current, {
-strings: [
-  'AI Portfolio',
-  'Deploying at 3AM',
-  'Fixing bugs I caused at 2AM',
-  'Creating elegant chaos',
-  'console.log("My life")',
-  'Full-stack pain manager',
-  'Git committing my soul',
-  'Move fast and break things',
-  'Talk is cheap. Show me the code',
-  'It works on my machine™',
-  'Commit early, commit often.',
-  'Eat. Sleep. Code. Repeat.',
-  '99 little bugs in the code...',
-  'Hello world, goodbye social life.',
-  'Typing furiously ≠ productivity.',
-  'sudo make me a sandwich',
-  'rm -rf /* and chill',
-  'The best code is no code at all',
-  'Hacking is not a crime.',
-  'Mess with the best, die like the rest',
-  'while (!success) try();',
-  'Stack Overflow is my co-pilot.',
-  'Think twice, code once.',
-  'Your mind is the IDE.',
-  'Escape the matrix, build your own.',
-  'I see dead code.',
-  'Keep calm and push to prod.'
-],
-
+      strings: [
+        'AI Portfolio',
+        'Deploying at 3AM',
+        'Fixing bugs I caused at 2AM',
+        'Creating elegant chaos',
+        'console.log("My life")',
+        'Full-stack pain manager',
+        'Git committing my soul',
+        'Move fast and break things',
+        'Talk is cheap. Show me the code',
+        'It works on my machine™',
+        'Commit early, commit often.',
+        'Eat. Sleep. Code. Repeat.',
+        '99 little bugs in the code...',
+        'Hello world, goodbye social life.',
+        'Typing furiously ≠ productivity.',
+        'sudo make me a sandwich',
+        'rm -rf /* and chill',
+        'The best code is no code at all',
+        'Hacking is not a crime.',
+        'Mess with the best, die like the rest',
+        'while (!success) try();',
+        'Stack Overflow is my co-pilot.',
+        'Think twice, code once.',
+        'Your mind is the IDE.',
+        'Escape the matrix, build your own.',
+        'I see dead code.',
+        'Keep calm and push to prod.',
+      ],
       typeSpeed: 50,
       backSpeed: 30,
       backDelay: 1500,
@@ -85,6 +85,22 @@ strings: [
     });
     return () => typed.destroy();
   }, []);
+
+  // 🔄 Handle theme toggle & persistence
+  useEffect(() => {
+    const stored = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const shouldBeDark = stored === 'dark' || (!stored && prefersDark);
+    setIsDark(shouldBeDark);
+    document.documentElement.classList.toggle('dark', shouldBeDark);
+  }, []);
+
+  const toggleTheme = () => {
+    const newDark = !isDark;
+    setIsDark(newDark);
+    document.documentElement.classList.toggle('dark', newDark);
+    localStorage.setItem('theme', newDark ? 'dark' : 'light');
+  };
 
   const topElementVariants = {
     hidden: { opacity: 0, y: -60 },
@@ -106,7 +122,14 @@ strings: [
 
   return (
     <>
-      <div className="absolute top-6 right-8 z-20">
+      <div className="absolute top-6 right-8 z-20 flex items-center gap-2">
+        <button
+          onClick={toggleTheme}
+          className="rounded-xl border border-border bg-background px-3 py-1 text-sm font-medium text-foreground shadow hover:bg-muted transition-all"
+        >
+          {isDark ? '☀️ Light' : '🌙 Dark'}
+        </button>
+
         <GithubButton
           animationDuration={1.5}
           label="Star"
@@ -114,7 +137,6 @@ strings: [
           repoUrl="https://github.com/devzahirx3"
         />
       </div>
-
       <div className="absolute top-6 left-6 z-20 flex flex-col items-start gap-2 sm:flex-row">
   <button
     onClick={() => (window.location.href = 'https://devzahir.com')}
