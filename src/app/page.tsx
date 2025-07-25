@@ -50,7 +50,6 @@ export default function Home() {
 strings: [
   'AI Portfolio',
   'Deploying at 3AM',
-  'Dark Mode or Die',
   'Writing cleaner code than your therapist writes notes',
   'Fixing bugs I caused at 2AM',
   'Creating elegant chaos',
