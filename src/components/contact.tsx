@@ -19,6 +19,18 @@ export function Contact() {
         name: 'Github',
         url: 'https://github.com/devzahirx3',
       },
+      {
+        name: 'Fiverr',
+        url: 'https://www.fiverr.com/s/m5Vb1g8',
+      },
+      {
+        name: 'Facebook',
+        url: 'https://www.facebook.com/share/1gjjhoY2Vn/?mibextid=wwXIfr',
+      },
+      {
+        name: 'WhatsApp',
+        url: 'https://wa.me/c/19013359043',
+      },
     ],
   };
 
@@ -35,9 +47,7 @@ export function Contact() {
           <h2 className="text-foreground text-3xl font-semibold md:text-4xl">
             Contacts
           </h2>
-          <span className="mt-2 sm:mt-0">
-            {contactInfo.handle}
-          </span>
+          <span className="mt-2 sm:mt-0">{contactInfo.handle}</span>
         </div>
 
         {/* Email Section */}
