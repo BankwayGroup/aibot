@@ -6,8 +6,6 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Typed from 'typed.js';
 import {
-  ArrowRight,
-  ArrowLeft,
   BriefcaseBusiness,
   Laugh,
   Layers,
@@ -39,14 +37,17 @@ const questionConfig = [
 export default function Home() {
   const [input, setInput] = useState('');
   const inputRef = useRef<HTMLInputElement>(null);
-  const typedRef = useRef(null);
+  const typedRef = useRef<HTMLSpanElement>(null);
   const router = useRouter();
   const [isDark, setIsDark] = useState(false);
 
-  const goToChat = (query: string) =>
+  const goToChat = (query: string) => {
     router.push(`/chat?query=${encodeURIComponent(query)}`);
+  };
 
   useEffect(() => {
+    const isMobile = typeof window !== 'undefined' && window.innerWidth < 640;
+
     const typed = new Typed(typedRef.current, {
       strings: [
         'AI Portfolio',
@@ -66,9 +67,7 @@ export default function Home() {
         'Typing furiously ≠ productivity.',
         'sudo make me a sandwich',
         'rm -rf /* and chill',
-        'The best code is no code at all',
         'Hacking is not a crime.',
-        'Mess with the best, die like the rest',
         'while (!success) try();',
         'Stack Overflow is my co-pilot.',
         'Think twice, code once.',
@@ -77,24 +76,26 @@ export default function Home() {
         'I see dead code.',
         'Keep calm and push to prod.',
       ],
-      typeSpeed: 50,
-      backSpeed: 30,
-      backDelay: 1500,
+      typeSpeed: isMobile ? 35 : 50,
+      backSpeed: isMobile ? 20 : 30,
+      backDelay: 1200,
       loop: true,
       showCursor: false,
       smartBackspace: true,
     });
+
     return () => typed.destroy();
   }, []);
 
-  // 🔄 Handle theme toggle & persistence
-useEffect(() => {
-  // Force light theme always
-  setIsDark(false); // Optional: only if you're tracking theme state
-  localStorage.setItem('theme', 'light');
-  document.documentElement.classList.add('light');
-  document.documentElement.classList.remove('dark');
-}, []);
+  // 🔄 Force light theme (prevent flashing / ensure consistency)
+  useEffect(() => {
+    setIsDark(false);
+    localStorage.setItem('theme', 'light');
+    document.documentElement.classList.add('light');
+    document.documentElement.classList.remove('dark');
+  }, []);
+}
+
 
 
 const toggleTheme = () => {
