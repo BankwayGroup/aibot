@@ -96,30 +96,32 @@ export default function WelcomeModal({ trigger }: WelcomeModalProps) {
                   </h3>
                   <p className="text-accent-foreground text-base leading-relaxed">
                     I'm so excited to present my{' '}
-                    brand new <strong>AI Assistant.</strong>
+                    <strong>AI Assistant.</strong>
                     <br /> Whether you're a recruiter, a friend, family member,
                     or just curious, feel free to ask anything you want!
                   </p>
                 </div>
+              </section> {/* <-- Close the section here */}
 
-            {/* Footer */}
-            <div className="flex flex-col items-center px-8 pt-4 pb-0 md:pb-8">
-              <Button
-                onClick={() => setIsOpen(false)}
-                className="h-auto rounded-full px-4 py-3"
-                size="sm"
-              >
-                Start Chatting
-              </Button>
-              <div
-                className="mt-6 flex cursor-pointer flex-wrap gap-1 text-center text-sm"
-                onClick={handleContactMe}
-              >
-                <p className="text-muted-foreground">
-                  If you love it, please share it! Feedback is always welcome.
-                </p>
-                <div className="flex cursor-pointer items-center text-blue-500 hover:underline">
-                  Contact me.
+              {/* Footer */}
+              <div className="flex flex-col items-center px-8 pt-4 pb-0 md:pb-8">
+                <Button
+                  onClick={() => setIsOpen(false)}
+                  className="h-auto rounded-full px-4 py-3"
+                  size="sm"
+                >
+                  Start Chatting
+                </Button>
+                <div
+                  className="mt-6 flex cursor-pointer flex-wrap gap-1 text-center text-sm"
+                  onClick={handleContactMe}
+                >
+                  <p className="text-muted-foreground">
+                    If you love it, please share it! Feedback is always welcome.
+                  </p>
+                  <div className="flex cursor-pointer items-center text-blue-500 hover:underline">
+                    Contact me.
+                  </div>
                 </div>
               </div>
             </div>
