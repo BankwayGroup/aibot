@@ -23,7 +23,7 @@ export function Presentation() {
     src={profile.src}
     alt="Profile picture of Dev Zahir"
     fill
-    className="object-cover translate-y-[-20px]" // move image upward
+    className="object-cover translate-y-[-35px] scale-[1.2]"
     priority
   />
 </div>
