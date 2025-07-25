@@ -97,13 +97,13 @@ export default function Home() {
       </div>
 
       <div className="absolute top-6 left-6 z-20 flex flex-col items-start gap-2 sm:flex-row">
-        <button
-          onClick={() => router.back()}
-          className="relative flex cursor-pointer items-center gap-2 rounded-full border bg-white/30 px-4 py-1.5 text-sm font-medium text-black shadow-md backdrop-blur-lg transition hover:bg-white/60 dark:border-white dark:text-white dark:hover:bg-neutral-800"
-        >
-          <ArrowLeft className="h-5 w-5" />
-          Back
-        </button>
+  <button
+    onClick={() => (window.location.href = 'https://devzahir.com')}
+    className="relative flex cursor-pointer items-center gap-2 rounded-full border bg-white/30 px-4 py-1.5 text-sm font-medium text-black shadow-md backdrop-blur-lg transition hover:bg-white/60 dark:border-white dark:text-white dark:hover:bg-neutral-800"
+  >
+    <ArrowLeft className="h-5 w-5" />
+    Back
+  </button>
 
         <button
           onClick={() => goToChat('Are you looking for an internship?')}
