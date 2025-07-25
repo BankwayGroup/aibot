@@ -80,34 +80,17 @@ const Avatar = dynamic<AvatarProps>(
         <div
           className={`flex items-center justify-center rounded-full transition-all duration-300 ${hasActiveTool ? 'h-20 w-20' : 'h-28 w-28'}`}
         >
-          <div
-            className="relative cursor-pointer"
-            onClick={() => (window.location.href = '/')}
-          >
-            {isIOS() ? (
-              <img
-                src="/landing-memojis.png"
-                alt="iOS avatar"
-                className="h-full w-full scale-[1.8] object-contain"
-              />
-            ) : (
-              <video
-                ref={videoRef}
-                className="h-full w-full scale-[1.8] object-contain"
-                muted
-                playsInline
-                loop
-              >
-                <source src="/final_memojis.webm" type="video/webm" />
-                <source src="/final_memojis_ios.mp4" type="video/mp4" />
-              </video>
-            )}
-          </div>
-        </div>
-      );
-    }),
-  { ssr: false }
-);
+<div
+  className="relative cursor-pointer"
+  onClick={() => (window.location.href = '/')}
+>
+  <img
+    src="/landing-memojis.png"
+    alt="avatar"
+    className="h-full w-full scale-[1.8] object-contain"
+  />
+</div>
+
 
 const MOTION_CONFIG = {
   initial: { opacity: 0, y: 20 },
