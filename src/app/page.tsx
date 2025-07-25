@@ -81,19 +81,21 @@ export default function Home() {
       backSpeed: 30,
       backDelay: 1500,
       loop: true,
+      showCursor: false,
       smartBackspace: true,
     });
     return () => typed.destroy();
   }, []);
 
   // 🔄 Handle theme toggle & persistence
-  useEffect(() => {
-    const stored = localStorage.getItem('theme');
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    const shouldBeDark = stored === 'dark' || (!stored && prefersDark);
-    setIsDark(shouldBeDark);
-    document.documentElement.classList.toggle('dark', shouldBeDark);
-  }, []);
+useEffect(() => {
+  // Force light theme always
+  setIsDark(false); // Optional: only if you're tracking theme state
+  localStorage.setItem('theme', 'light');
+  document.documentElement.classList.add('light');
+  document.documentElement.classList.remove('dark');
+}, []);
+
 
 const toggleTheme = () => {
   const newDark = !isDark;
@@ -181,12 +183,16 @@ return (
           <h2 className="text-secondary-foreground mt-1 text-xl font-semibold md:text-2xl">
             Hey, I'm Dev Zahir 👋
           </h2>
-<h1 className="text-4xl font-bold sm:text-5xl md:text-6xl lg:text-7xl" style={{ minHeight: '1.2em' }}>
+<h1
+  className="text-3xl font-bold sm:text-5xl md:text-6xl lg:text-7xl text-center leading-tight"
+  style={{ minHeight: '1.2em' }}
+>
   <span
     ref={typedRef}
-    className="inline-block min-w-[24ch] whitespace-nowrap"
+    className="inline-block min-w-[22ch] whitespace-nowrap"
   />
 </h1>
+
 
 
         </motion.div>
