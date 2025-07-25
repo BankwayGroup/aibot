@@ -13,11 +13,11 @@ export function Contact() {
     socials: [
       {
         name: 'LinkedIn',
-        url: 'https://www.linkedin.com/in/dev-zahir-54baa5376/',
+        url: 'https://www.linkedin.com/in/dev-zahir-54baa5376',
       },
       {
         name: 'Github',
-        url: 'https://github.com/devzahirx3',
+        url: 'https://github.com/devzahirx3/DevZahir',
       },
       {
         name: 'Fiverr',
