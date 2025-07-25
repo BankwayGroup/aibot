@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import Typed from 'typed.js';
 import {
   ArrowRight,
   ArrowLeft,
@@ -19,7 +20,6 @@ import { GithubButton } from '@/components/ui/github-button';
 import FluidCursor from '@/components/FluidCursor';
 import WelcomeModal from '@/components/welcome-modal';
 
-/* ---------- quick-question data ---------- */
 const questions = {
   Me: 'Who are you? I want to know more about you.',
   Projects: 'What are your projects? What are you working on right now?',
@@ -36,14 +36,36 @@ const questionConfig = [
   { key: 'Contact', color: '#C19433', icon: UserRoundSearch },
 ] as const;
 
-/* ---------- component ---------- */
 export default function Home() {
   const [input, setInput] = useState('');
   const inputRef = useRef<HTMLInputElement>(null);
+  const typedRef = useRef(null);
   const router = useRouter();
 
   const goToChat = (query: string) =>
     router.push(`/chat?query=${encodeURIComponent(query)}`);
+
+  useEffect(() => {
+    const typed = new Typed(typedRef.current, {
+      strings: [
+        'AI Portfolio',
+        'Deploying at 3AM',
+        'Dark Mode or Die 💀',
+        'Writing cleaner code than your therapist writes notes',
+        'Fixing bugs I caused at 2AM',
+        'Creating elegant chaos',
+        'console.log("My life")',
+        'Full-stack pain manager 🧠💻',
+        'Git committing my soul',
+      ],
+      typeSpeed: 50,
+      backSpeed: 30,
+      backDelay: 1500,
+      loop: true,
+      smartBackspace: true,
+    });
+    return () => typed.destroy();
+  }, []);
 
   const topElementVariants = {
     hidden: { opacity: 0, y: -60 },
@@ -63,13 +85,8 @@ export default function Home() {
     },
   };
 
-  useEffect(() => {
-    // Optional: preload stuff if needed
-  }, []);
-
   return (
     <>
-      {/* GitHub button */}
       <div className="absolute top-6 right-8 z-20">
         <GithubButton
           animationDuration={1.5}
@@ -79,34 +96,28 @@ export default function Home() {
         />
       </div>
 
-      {/* Top-left buttons */}
-<div className="absolute top-6 left-6 z-20 flex flex-col items-start gap-2 sm:flex-row">
-  {/* Back button - now on top */}
-  <button
-    onClick={() => router.back()}
-    className="relative flex cursor-pointer items-center gap-2 rounded-full border bg-white/30 px-4 py-1.5 text-sm font-medium text-black shadow-md backdrop-blur-lg transition hover:bg-white/60 dark:border-white dark:text-white dark:hover:bg-neutral-800"
-  >
-    <ArrowLeft className="h-5 w-5" />
-    Back
-  </button>
+      <div className="absolute top-6 left-6 z-20 flex flex-col items-start gap-2 sm:flex-row">
+        <button
+          onClick={() => router.back()}
+          className="relative flex cursor-pointer items-center gap-2 rounded-full border bg-white/30 px-4 py-1.5 text-sm font-medium text-black shadow-md backdrop-blur-lg transition hover:bg-white/60 dark:border-white dark:text-white dark:hover:bg-neutral-800"
+        >
+          <ArrowLeft className="h-5 w-5" />
+          Back
+        </button>
 
-  {/* Looking for talent */}
-  <button
-    onClick={() => goToChat('Are you looking for an internship?')}
-    className="relative flex cursor-pointer items-center gap-2 rounded-full border bg-white/30 px-4 py-1.5 text-sm font-medium text-black shadow-md backdrop-blur-lg transition hover:bg-white/60 dark:border-white dark:text-white dark:hover:bg-neutral-800"
-  >
-    <span className="relative flex h-2 w-2">
-      <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75"></span>
-      <span className="relative inline-flex h-2 w-2 rounded-full bg-green-500"></span>
-    </span>
-    Looking for a talent?
-  </button>
-</div>
+        <button
+          onClick={() => goToChat('Are you looking for an internship?')}
+          className="relative flex cursor-pointer items-center gap-2 rounded-full border bg-white/30 px-4 py-1.5 text-sm font-medium text-black shadow-md backdrop-blur-lg transition hover:bg-white/60 dark:border-white dark:text-white dark:hover:bg-neutral-800"
+        >
+          <span className="relative flex h-2 w-2">
+            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75"></span>
+            <span className="relative inline-flex h-2 w-2 rounded-full bg-green-500"></span>
+          </span>
+          Looking for a talent?
+        </button>
+      </div>
 
-
-      {/* Main content */}
       <div className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden px-4 pb-10 md:pb-20">
-        {/* Blurred footer */}
         <div className="pointer-events-none absolute inset-x-0 bottom-0 flex justify-center overflow-hidden">
           <div
             className="hidden bg-gradient-to-b from-neutral-500/10 to-neutral-500/0 bg-clip-text text-[10rem] leading-none font-black text-transparent select-none sm:block lg:text-[16rem]"
@@ -116,32 +127,27 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Header */}
         <motion.div
           className="z-1 mt-24 mb-8 flex flex-col items-center text-center md:mt-4 md:mb-12"
           variants={topElementVariants}
           initial="hidden"
           animate="visible"
         >
-          <div className="z-100">
-            <WelcomeModal />
-          </div>
+          <WelcomeModal />
           <h2 className="text-secondary-foreground mt-1 text-xl font-semibold md:text-2xl">
             Hey, I'm Dev Zahir 👋
           </h2>
           <h1 className="text-4xl font-bold sm:text-5xl md:text-6xl lg:text-7xl">
-            AI Portfolio
+            <span ref={typedRef} className="inline-block" />
           </h1>
         </motion.div>
 
-        {/* Question input + quick buttons */}
         <motion.div
           variants={bottomElementVariants}
           initial="hidden"
           animate="visible"
           className="z-10 mt-4 flex w-full flex-col items-center justify-center md:px-0"
         >
-          {/* Free-form question input */}
           <form
             onSubmit={(e) => {
               e.preventDefault();
@@ -169,7 +175,6 @@ export default function Home() {
             </div>
           </form>
 
-          {/* Quick question buttons */}
           <div className="mt-4 grid w-full max-w-2xl grid-cols-1 gap-3 sm:grid-cols-3 md:grid-cols-5">
             {questionConfig.map(({ key, color, icon: Icon }) => (
               <Button
@@ -189,13 +194,12 @@ export default function Home() {
 
         <FluidCursor />
       </div>
+
+      <footer>
+        <div className="w-full border-t border-neutral-300 py-6 text-center text-sm text-neutral-500 dark:border-neutral-700 dark:text-neutral-400">
+          © 2025 Dev Zahir. All rights reserved.
+        </div>
+      </footer>
     </>
   );
 }
-    <footer>
-      <div className="w-full border-t border-neutral-300 py-6 text-center text-sm text-neutral-500 dark:border-neutral-700 dark:text-neutral-400">
-        © 2025 Dev Zahir. All rights reserved.
-      </div>
-    </footer>
-  </div>
-);
