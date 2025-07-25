@@ -65,30 +65,31 @@ export default function Home() {
   useEffect(() => {
   // No assets preloading anymore
 }, []);
-
 return (
-  <div className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden px-4 pb-10 md:pb-20">
-    {/* big blurred footer word */}
-    <div className="pointer-events-none absolute inset-x-0 bottom-0 flex justify-center overflow-hidden">
-      <div
-        className="hidden bg-gradient-to-b from-neutral-500/10 to-neutral-500/0 bg-clip-text text-[10rem] leading-none font-black text-transparent select-none sm:block lg:text-[16rem]"
-        style={{ marginBottom: '-2.5rem' }}
-      >
-        Toukoum
+  <>
+    <div className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden px-4 pb-10 md:pb-20">
+      {/* big blurred footer word */}
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 flex justify-center overflow-hidden">
+        <div
+          className="hidden bg-gradient-to-b from-neutral-500/10 to-neutral-500/0 bg-clip-text text-[10rem] leading-none font-black text-transparent select-none sm:block lg:text-[16rem]"
+          style={{ marginBottom: '-2.5rem' }}
+        >
+          2025 © Dev Zahir
+        </div>
       </div>
     </div>
-  </div>
 
-      {/* GitHub button */}
-      <div className="absolute top-6 right-8 z-20">
-        <GithubButton
-          //targetStars={68}
-          animationDuration={1.5}
-          label="Star"
-          size={'sm'}
-          repoUrl="https://github.com/devzahirx3"
-        />
-      </div>
+    {/* GitHub button */}
+    <div className="absolute top-6 right-8 z-20">
+      <GithubButton
+        //targetStars={68}
+        animationDuration={1.5}
+        label="Star"
+        size={'sm'}
+        repoUrl="https://github.com/devzahirx3"
+      />
+    </div>
+
 
       <div className="absolute top-6 left-6 z-20">
         <button
@@ -102,6 +103,13 @@ return (
           </span>
           Looking for a talent?
         </button>
+                <button
+      onClick={() => router.back()}
+      className="relative flex cursor-pointer items-center gap-2 rounded-full border bg-white/30 px-4 py-1.5 text-sm font-medium text-black shadow-md backdrop-blur-lg transition hover:bg-white/60 dark:border-white dark:text-white dark:hover:bg-neutral-800"
+    >
+      <ArrowLeft className="h-5 w-5" />
+      Back
+    </button>
       </div>
 
       {/* header */}
@@ -176,13 +184,7 @@ return (
             </Button>
           ))}
         </div>
-            <button
-      onClick={() => router.back()}
-      className="relative flex cursor-pointer items-center gap-2 rounded-full border bg-white/30 px-4 py-1.5 text-sm font-medium text-black shadow-md backdrop-blur-lg transition hover:bg-white/60 dark:border-white dark:text-white dark:hover:bg-neutral-800"
-    >
-      <ArrowLeft className="h-5 w-5" />
-      Back
-    </button>
+    
       </motion.div>
       <FluidCursor />
     </div>
