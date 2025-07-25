@@ -199,6 +199,13 @@ export default function Home() {
             </Button>
           ))}
         </div>
+            <button
+      onClick={() => router.back()}
+      className="relative flex cursor-pointer items-center gap-2 rounded-full border bg-white/30 px-4 py-1.5 text-sm font-medium text-black shadow-md backdrop-blur-lg transition hover:bg-white/60 dark:border-white dark:text-white dark:hover:bg-neutral-800"
+    >
+      <ArrowLeft className="h-5 w-5" />
+      Back
+    </button>
       </motion.div>
       <FluidCursor />
     </div>
