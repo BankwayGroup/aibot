@@ -6,7 +6,7 @@ import { useRouter } from 'next/navigation';
 
 const InternshipCard = () => {
   const openMail = () => {
-    window.open('mailto:raphaelgiraud12@gmail.com', '_blank');
+    window.open('mailto:devzahirllc@gmail.com', '_blank');
   };
   const router = useRouter();
 
@@ -23,17 +23,17 @@ const InternshipCard = () => {
           {/* Avatar placeholder */}
           <div className="bg-muted h-16 w-16 overflow-hidden rounded-full shadow-md">
             <img
-              src="/avatar-raphael.jpg"
-              alt="Raphael's avatar"
+              src="/avatar-devzahir.jpg"
+              alt="Dev Zahir's avatar"
               className="h-full w-full object-cover"
             />
           </div>
           <div>
             <h2 className="text-foreground text-2xl font-semibold">
-              Raphael Giraud
+              Dev Zahir
             </h2>
             <p className="text-muted-foreground text-sm">
-              Intership Application
+              Internship Application
             </p>
           </div>
         </div>
@@ -78,16 +78,17 @@ const InternshipCard = () => {
             <p className="text-foreground text-sm font-medium">Tech stack</p>
             <div className="text-muted-foreground grid grid-cols-1 gap-y-1 text-sm sm:grid-cols-2">
               <ul className="decoration-none list-disc pl-4">
-                <li>Python, Next.js, TypeScript, Tailwind CSS</li>
-                <li>Vercel AI SDK, Supabase, Prisma</li>
-                <li>OpenAI, Mistral, Claude, Whisper</li>
-                <li>Prompt engineering, fine-tuning</li>
+                <li>JavaScript, PHP, Python, Go, HTML, Tailwind CSS</li>
+                <li>Django, Flask, Node.js, Express, Flarum (PHP)</li>
+                <li>Telegram Bots (Python, Node.js, Go)</li>
+                <li>MySQL, MongoDB, Mongoose, SQLite</li>
               </ul>
               <ul className="list-disc pl-4">
-                <li>Weaviate, Pinecone, vector DBs</li>
-                <li>Hugging Face Transformers</li>
-                <li>Tool routing, calling, RAG</li>
-                <li>Hackathons + AI agent workflows</li>
+                <li>REST APIs, Webhooks, JSON handling</li>
+                <li>Linux, Bash, VPS deployment & security</li>
+                <li>Frontend & Backend integration</li>
+                <li>Basic CMS & forum systems (Flarum, WordPress)</li>
+                <li>Website projects, landing pages, bot-based platforms</li>
                 <li>
                   <a
                     href="/chat?query=What%20are%20your%20skills%3F%20Give%20me%20a%20list%20of%20your%20soft%20and%20hard%20skills."
