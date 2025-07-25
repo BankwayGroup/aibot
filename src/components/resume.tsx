@@ -14,7 +14,7 @@ export function Resume() {
     lastUpdated: 'March 2025',
     fileSize: '0.5 MB',
     previewImageSrc: '/resume_giraud_preview.png',
-    downloadUrl: '/resume_giraud.pdf',
+    downloadUrl: '/devzahir.pdf',
   };
 
   const handleDownload = () => {
