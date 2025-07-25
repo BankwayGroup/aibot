@@ -46,50 +46,46 @@ interface AvatarProps {
 }
 
 // Dynamic import of Avatar component
+// Dynamic import of Avatar component
 const Avatar = dynamic<AvatarProps>(
   () =>
     Promise.resolve(({ hasActiveTool, videoRef, isTalking }: AvatarProps) => {
-      // This function will only execute on the client
       const isIOS = () => {
-        // Multiple detection methods
         const userAgent = window.navigator.userAgent;
         const platform = window.navigator.platform;
         const maxTouchPoints = window.navigator.maxTouchPoints || 0;
 
-        // UserAgent-based check
-        const isIOSByUA =
-          //@ts-ignore
-          /iPad|iPhone|iPod/.test(userAgent) && !window.MSStream;
-
-        // Platform-based check
+        const isIOSByUA = /iPad|iPhone|iPod/.test(userAgent) && !window.MSStream;
         const isIOSByPlatform = /iPad|iPhone|iPod/.test(platform);
-
-        // iPad Pro check
         const isIPadOS =
-          //@ts-ignore
           platform === 'MacIntel' && maxTouchPoints > 1 && !window.MSStream;
-
-        // Safari check
         const isSafari = /Safari/.test(userAgent) && !/Chrome/.test(userAgent);
 
         return isIOSByUA || isIOSByPlatform || isIPadOS || isSafari;
       };
 
-      // Conditional rendering based on detection
       return (
         <div
-          className={`flex items-center justify-center rounded-full transition-all duration-300 ${hasActiveTool ? 'h-20 w-20' : 'h-28 w-28'}`}
+          className={`flex items-center justify-center rounded-full transition-all duration-300 ${
+            hasActiveTool ? 'h-20 w-20' : 'h-28 w-28'
+          }`}
         >
-<div
-  className="relative cursor-pointer"
-  onClick={() => (window.location.href = '/')}
->
-  <img
-    src="/landing-memojis.png"
-    alt="avatar"
-    className="h-full w-full scale-[1.8] object-contain"
-  />
-</div>
+          <div
+            className="relative cursor-pointer"
+            onClick={() => (window.location.href = '/')}
+          >
+            <img
+              src="/landing-memojis.png"
+              alt="avatar"
+              className="h-full w-full scale-[1.8] object-contain"
+            />
+          </div>
+        </div>
+      );
+    }),
+  { ssr: false }
+);
+
 
 
 const MOTION_CONFIG = {
