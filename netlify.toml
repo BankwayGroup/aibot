@@ -1,7 +1,10 @@
 [build]
-  base = "portfolio-main"
   command = "pnpm build"
-  publish = "portfolio-main/.next"
+  publish = ".next"
+
+[build.environment]
+  OPENAI_API_KEY = "your-openai-api-key"
+  GITHUB_TOKEN = "your-github-token"
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"
