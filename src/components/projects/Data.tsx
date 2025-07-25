@@ -59,7 +59,7 @@ interface ProjectProps {
 }
 
 const ProjectContent = ({ project }: { project: ProjectProps }) => {
-  // Find the matching project data, cast to ProjectProps to satisfy TypeScript
+  // Find the matching project data, typecast safely
   const projectData = PROJECT_CONTENT.find((p) => p.title === project.title) as ProjectProps | undefined;
 
   if (!projectData) {
@@ -68,7 +68,7 @@ const ProjectContent = ({ project }: { project: ProjectProps }) => {
 
   return (
     <div className="space-y-10">
-      {/* Header section with description */}
+      {/* Header with description */}
       <div className="rounded-3xl bg-[#F5F5F7] p-8 dark:bg-[#1D1D1F]">
         <div className="space-y-6">
           <div className="flex items-center gap-2 text-sm text-neutral-500 dark:text-neutral-400">
@@ -80,7 +80,7 @@ const ProjectContent = ({ project }: { project: ProjectProps }) => {
           </p>
 
           {/* Tech stack */}
-          {projectData.techStack?.length > 0 && (
+          {projectData.techStack && projectData.techStack.length > 0 && (
             <div className="pt-4">
               <h3 className="mb-3 text-sm tracking-wide text-neutral-500 uppercase dark:text-neutral-400">
                 Technologies
@@ -101,12 +101,10 @@ const ProjectContent = ({ project }: { project: ProjectProps }) => {
       </div>
 
       {/* Links section */}
-      {projectData.links?.length > 0 && (
+      {projectData.links && projectData.links.length > 0 && (
         <div className="mb-24">
           <div className="px-6 mb-4 flex items-center gap-2">
-            <h3 className="text-sm tracking-wide text-neutral-500 dark:text-neutral-400">
-              Links
-            </h3>
+            <h3 className="text-sm tracking-wide text-neutral-500 dark:text-neutral-400">Links</h3>
             <Link className="text-muted-foreground w-4" />
           </div>
           <Separator className="my-4" />
@@ -128,7 +126,7 @@ const ProjectContent = ({ project }: { project: ProjectProps }) => {
       )}
 
       {/* Images gallery */}
-      {projectData.images?.length > 0 && (
+      {projectData.images && projectData.images.length > 0 && (
         <div className="space-y-6">
           <div className="grid grid-cols-1 gap-4">
             {projectData.images.map((image, index) => (
