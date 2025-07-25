@@ -95,48 +95,56 @@ export default function Home() {
     document.documentElement.classList.toggle('dark', shouldBeDark);
   }, []);
 
-  const toggleTheme = () => {
-    const newDark = !isDark;
-    setIsDark(newDark);
-    document.documentElement.classList.toggle('dark', newDark);
-    localStorage.setItem('theme', newDark ? 'dark' : 'light');
-  };
+const toggleTheme = () => {
+  const newDark = !isDark;
+  setIsDark(newDark);
+  document.documentElement.classList.toggle('dark', newDark);
+  localStorage.setItem('theme', newDark ? 'dark' : 'light');
 
-  const topElementVariants = {
-    hidden: { opacity: 0, y: -60 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { type: 'ease', duration: 0.8 },
-    },
-  };
+  // Custom override for elements with data-darkstyle attribute
+  document.querySelectorAll<HTMLElement>('[data-darkstyle]').forEach(el => {
+    if (newDark) el.classList.add('dark');
+    else el.classList.remove('dark');
+  });
+};
 
-  const bottomElementVariants = {
-    hidden: { opacity: 0, y: 80 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { type: 'ease', duration: 0.8, delay: 0.2 },
-    },
-  };
+const topElementVariants = {
+  hidden: { opacity: 0, y: -60 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { type: 'ease', duration: 0.8 },
+  },
+};
 
-  return (
-    <>
-      <div className="absolute top-6 right-8 z-20 flex items-center gap-2">
-        <button
-          onClick={toggleTheme}
-          className="rounded-xl border border-border bg-background px-3 py-1 text-sm font-medium text-foreground shadow hover:bg-muted transition-all"
-        >
-          {isDark ? '☀️ Light' : '🌙 Dark'}
-        </button>
+const bottomElementVariants = {
+  hidden: { opacity: 0, y: 80 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { type: 'ease', duration: 0.8, delay: 0.2 },
+  },
+};
 
-        <GithubButton
-          animationDuration={1.5}
-          label="Star"
-          size="sm"
-          repoUrl="https://github.com/devzahirx3"
-        />
-      </div>
+return (
+  <>
+    <div className="absolute top-6 right-8 z-20 flex items-center gap-2">
+      <button
+        onClick={toggleTheme}
+        className="rounded-xl border border-border bg-background px-3 py-1 text-sm font-medium text-foreground shadow hover:bg-muted transition-all"
+      >
+        {isDark ? '☀️ Light' : '🌙 Dark'}
+      </button>
+
+      <GithubButton
+        animationDuration={1.5}
+        label="Star"
+        size="sm"
+        repoUrl="https://github.com/devzahirx3"
+      />
+    </div>
+
+
       <div className="absolute top-6 left-6 z-20 flex flex-col items-start gap-2 sm:flex-row">
   <button
     onClick={() => (window.location.href = 'https://devzahir.com')}
