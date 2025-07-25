@@ -59,7 +59,6 @@ strings: [
   'Talk is cheap. Show me the code',
   'It works on my machine™',
   'Commit early, commit often.',
-  'Writing cleaner code than your therapist',
   'Eat. Sleep. Code. Repeat.',
   'First, solve the problem. Then, write the code.',
   '99 little bugs in the code...',
