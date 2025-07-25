@@ -18,8 +18,8 @@ export const getInternship = tool({
 
 📬 **Contact me** via:
 - Email: DevZahirLLC@gmail.com
-- LinkedIn: [linkedin.com/in/dev-zahir](https://www.linkedin.com/in/dev-zahir/)
-- GitHub: [github.com/devzahirx3](https://github.com/devzahirx3)
+- LinkedIn: [linkedin.com/in/dev-zahir](https://www.linkedin.com/in/dev-zahir-54baa5376/)
+- GitHub: [github.com/devzahirx3](https://github.com/devzahirx3/DevZahir)
 
 Let's build cool shit together ✌️
     `;
