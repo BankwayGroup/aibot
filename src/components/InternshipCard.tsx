@@ -66,7 +66,7 @@ const InternshipCard = () => {
           <div>
             <p className="text-foreground text-sm font-medium">Location</p>
             <p className="text-muted-foreground text-sm">
-              Preferably San Francisco 🇺🇸
+              Preferably Los Angeles 🇺🇸
             </p>
           </div>
         </div>
@@ -89,6 +89,7 @@ const InternshipCard = () => {
   <li>Frontend & Backend integration</li>
   <li>Basic CMS & forum systems (Flarum, WordPress)</li>
   <li>Website projects, landing pages, bot-based platforms</li>
+                      <li>
                   <a
                     href="/chat?query=What%20are%20your%20skills%3F%20Give%20me%20a%20list%20of%20your%20soft%20and%20hard%20skills."
                     className="cursor-pointer items-center text-blue-500 underline"
