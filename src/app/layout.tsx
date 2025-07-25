@@ -65,7 +65,7 @@ keywords: [
     url: "https://DevZahir.com",
     title: "AI Portfolio",
     description: "2025 © Dev Zahir",
-    siteName: "DevZahir Portfolio",
+    siteName: "DevZahir AI",
   },
   twitter: {
     card: "summary_large_image",
