@@ -80,28 +80,29 @@ export default function Home() {
       </div>
 
       {/* Top-left buttons */}
-      <div className="absolute top-6 left-6 z-20 flex flex-col items-start gap-2 sm:flex-row">
-        {/* Looking for talent */}
-        <button
-          onClick={() => goToChat('Are you looking for an internship?')}
-          className="relative flex cursor-pointer items-center gap-2 rounded-full border bg-white/30 px-4 py-1.5 text-sm font-medium text-black shadow-md backdrop-blur-lg transition hover:bg-white/60 dark:border-white dark:text-white dark:hover:bg-neutral-800"
-        >
-          <span className="relative flex h-2 w-2">
-            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75"></span>
-            <span className="relative inline-flex h-2 w-2 rounded-full bg-green-500"></span>
-          </span>
-          Looking for a talent?
-        </button>
+<div className="absolute top-6 left-6 z-20 flex flex-col items-start gap-2 sm:flex-row">
+  {/* Back button - now on top */}
+  <button
+    onClick={() => router.back()}
+    className="relative flex cursor-pointer items-center gap-2 rounded-full border bg-white/30 px-4 py-1.5 text-sm font-medium text-black shadow-md backdrop-blur-lg transition hover:bg-white/60 dark:border-white dark:text-white dark:hover:bg-neutral-800"
+  >
+    <ArrowLeft className="h-5 w-5" />
+    Back
+  </button>
 
-        {/* Back button */}
-        <button
-          onClick={() => router.back()}
-          className="relative flex cursor-pointer items-center gap-2 rounded-full border bg-white/30 px-4 py-1.5 text-sm font-medium text-black shadow-md backdrop-blur-lg transition hover:bg-white/60 dark:border-white dark:text-white dark:hover:bg-neutral-800"
-        >
-          <ArrowLeft className="h-5 w-5" />
-          Back
-        </button>
-      </div>
+  {/* Looking for talent */}
+  <button
+    onClick={() => goToChat('Are you looking for an internship?')}
+    className="relative flex cursor-pointer items-center gap-2 rounded-full border bg-white/30 px-4 py-1.5 text-sm font-medium text-black shadow-md backdrop-blur-lg transition hover:bg-white/60 dark:border-white dark:text-white dark:hover:bg-neutral-800"
+  >
+    <span className="relative flex h-2 w-2">
+      <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75"></span>
+      <span className="relative inline-flex h-2 w-2 rounded-full bg-green-500"></span>
+    </span>
+    Looking for a talent?
+  </button>
+</div>
+
 
       {/* Main content */}
       <div className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden px-4 pb-10 md:pb-20">
@@ -191,3 +192,10 @@ export default function Home() {
     </>
   );
 }
+    <footer>
+      <div className="w-full border-t border-neutral-300 py-6 text-center text-sm text-neutral-500 dark:border-neutral-700 dark:text-neutral-400">
+        © 2025 Dev Zahir. All rights reserved.
+      </div>
+    </footer>
+  </div>
+);
