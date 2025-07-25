@@ -1,7 +1,0 @@
-[build]
-  base = "portfolio-main"
-  command = "pnpm build"
-  publish = "portfolio-main/.next"
-
-[[plugins]]
-  package = "@netlify/plugin-nextjs"
