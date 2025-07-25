@@ -39,14 +39,14 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://DevZahir.com",
     title: "DevZahir Portfolio",
-    description: "Interactive portfolio with an AI-powered Memoji that answers questions about me",
+    description: "Interactive portfolio by Dev Zahir LLC",
     siteName: "DevZahir Portfolio",
   },
   twitter: {
     card: "summary_large_image",
     title: "DevZahir Portfolio",
     description: "Interactive portfolio with an AI-powered Memoji that answers questions about me",
-    creator: "@DevZahir",
+    creator: "@Devzahirx3",
   },
   icons: {
     icon: [
