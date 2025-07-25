@@ -90,7 +90,7 @@ const PROJECT_CONTENT = [
       },
       {
         name: 'github',
-        url: 'https://github.com/toukoum/Rrate',
+        url: 'https://github.com/devzahirx3',
       },
     ],
     images: [
