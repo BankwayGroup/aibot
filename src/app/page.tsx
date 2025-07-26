@@ -54,14 +54,13 @@ export default function Home() {
 
     const typed = new Typed(typedRef.current, {
       strings: [
-        'AI Zahir',
+        'AI Developer',
         'Deploying at 3AM',
         'Fixing bugs I caused at 2AM',
         'Creating elegant chaos',
         'console.log("My life")',
         'Full-stack pain manager',
         'Git committing my soul',
-        'Move fast and break things',
         'Talk is cheap. Show me the code',
         'It works on my machine™',
         'Commit early, commit often.',
@@ -73,11 +72,8 @@ export default function Home() {
         'rm -rf /* and chill',
         'Hacking is not a crime.',
         'while (!success) try();',
-        'Stack Overflow is my co-pilot.',
         'Think twice, code once.',
         'Your mind is the IDE.',
-        'Escape the matrix, build your own.',
-        'I see dead code.',
         'Keep calm and push to prod.',
       ],
       typeSpeed: isMobile ? 35 : 50,
