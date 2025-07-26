@@ -26,6 +26,7 @@ const questions = {
   Skills: 'What are your skills? Give me a list of your soft and hard skills.',
   Fun: 'What’s the craziest thing you’ve ever done? What are your hobbies?',
   Contact: 'How can I contact you?',
+  Packages: 'What packages or services do you offer? What do they include?',
 } as const;
 
 const questionConfig = [
@@ -34,6 +35,7 @@ const questionConfig = [
   { key: 'Skills', color: '#856ED9', icon: Layers },
   { key: 'Fun', color: '#B95F9D', icon: PartyPopper },
   { key: 'Contact', color: '#C19433', icon: UserRoundSearch },
+  { key: 'Packages', color: '#22c55e', icon: ShoppingCart },
 ] as const;
 
 export default function Home() {
