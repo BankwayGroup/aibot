@@ -54,7 +54,7 @@ export default function Home() {
 
     const typed = new Typed(typedRef.current, {
       strings: [
-        'AI Portfolio',
+        'AI Zahir',
         'Deploying at 3AM',
         'Fixing bugs I caused at 2AM',
         'Creating elegant chaos',
