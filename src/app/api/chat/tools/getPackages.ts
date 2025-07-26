@@ -1,55 +1,64 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Button } from '@/components/ui/button'; // optional if using shadcn/ui
+import { Button } from '@/components/ui/button'; // or replace with plain button
 import Link from 'next/link';
 
 const packages = [
   {
     title: '🌱 Starter Website or Bot',
     price: '$80',
-    description: 'A clean, modern 1-page site or a basic bot with just the right essentials.',
+    description:
+      'A basic bot with essential features OR a simple 1-page static website tailored to your needs!',
     features: [
-      'E-commerce setup',
+      'E-commerce functionality',
+      'Content upload and management',
       'Speed optimization',
-      'Payment integration',
       'Social media icons',
       'Plugin/extension setup',
-      'Hosting support',
-      'Opt-in form + autoresponder',
+      'Payment processing integration',
+      'Opt-in form and autoresponder setup',
+      'Hosting setup support',
+      '1 beautifully designed page',
     ],
     delivery: '3 days',
     revisions: 2,
   },
   {
-    title: '🚀 Multi-Page Website or Bot',
+    title: '🤖 Multi-Page Website or Bot',
     price: '$165',
-    description: 'A responsive 5-page site or dynamic bot with added functionality.',
+    description:
+      'Get a multi-page responsive website with dynamic features and user-friendly navigation.',
     features: [
-      'Up to 5 custom pages',
-      'E-commerce for 20 products',
-      '3 plugins/extensions',
+      'Up to 5 pages',
+      'Content upload & management',
       'Functionality enhancements',
-      'Payment processing',
-      'Hosting setup',
-      'Opt-in forms',
-      'Speed boost + social branding',
+      '3 plugins/extensions',
+      'E-commerce features for 20 products',
+      'Payment processing integration',
+      'Opt-in form & autoresponder setup',
+      'Speed optimization',
+      'Hosting setup assistance',
+      'Social media icons for branding',
     ],
     delivery: '5 days',
     revisions: 3,
   },
   {
-    title: '💼 E-Commerce Website or Advanced Bot',
+    title: '💼 E-Commerce Website or Bot',
     price: '$425',
-    description: 'A 10-page powerhouse site or AI-driven bot with backend logic.',
+    description:
+      'Get a fully functional e-commerce website or an advanced site with backend integration.',
     features: [
-      'E-commerce for 50 products',
-      'Backend integration',
+      'Content upload & management',
       '5 plugins/extensions',
-      'Autoresponders + email flows',
-      'Hosting + speed optimization',
-      'Social media integration',
-      'Full content management',
+      'E-commerce setup for 50 products',
+      'Payment processing integration',
+      'Opt-in form & autoresponder setup',
+      'Speed optimization',
+      'Hosting setup support',
+      'Social media icons',
+      'Up to 10 pages',
     ],
     delivery: '10 days',
     revisions: 5,
@@ -78,8 +87,14 @@ export default function PackageCards() {
           </div>
           <div className="mt-6">
             <div className="text-lg font-semibold">{pkg.price}</div>
-            <p className="text-sm text-zinc-500">🕒 {pkg.delivery} &nbsp;&bull;&nbsp; 🔁 {pkg.revisions} revisions</p>
-            <Link href="https://www.fiverr.com/s/m5Vb1g8" target="_blank" rel="noopener noreferrer">
+            <p className="text-sm text-zinc-500">
+              🕒 {pkg.delivery} &nbsp;&bull;&nbsp; 🔁 {pkg.revisions} Revisions
+            </p>
+            <Link
+              href="https://www.fiverr.com/s/m5Vb1g8"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <Button className="mt-4 w-full bg-green-600 hover:bg-green-700 text-white text-sm font-semibold">
                 Buy Now on Fiverr
               </Button>
