@@ -16,54 +16,6 @@ export function Presentation() {
     fallbackSrc: 'https://images.unsplash.com/photo-1610',
   };
 
-  return (
-    <div className="flex flex-col items-center justify-center gap-4 p-4">
-<div className="relative w-[160px] h-[160px] overflow-hidden">
-  <Image
-    src={profile.src}
-    alt="Profile"
-    fill
-    style={{ objectFit: 'cover', objectPosition: 'top center' }}
-    className="rounded-full"
-  />
-</div>
-
-
-
-      </div>
-      <motion.h1
-        initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        className="text-2xl font-bold text-center"
-      >
-        {profile.name}
-      </motion.h1>
-      <p className="text-center text-sm text-gray-600 whitespace-pre-line">
-        {profile.description}
-      </p>
-    </div>
-  );
-
-
-  return (
-    <section className="text-center space-y-4 px-4">
-      <motion.img
-        src={profile.src}
-        onError={(e) => (e.currentTarget.src = profile.fallbackSrc)}
-        alt={profile.name}
-        className="w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 rounded-full object-cover mx-auto shadow-md"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.8 }}
-      />
-
-      <h1 className="text-xl font-semibold">{profile.name}</h1>
-      <p className="text-sm text-muted-foreground">{profile.location}</p>
-      <p className="whitespace-pre-line text-sm">{profile.description}</p>
-    </section>
-  );
-
   // Animation variants for text elements
   const textVariants = {
     hidden: { opacity: 0, y: 20 },
@@ -91,6 +43,7 @@ export function Presentation() {
   return (
     <div className="mx-auto w-full max-w-5xl py-6 font-sans">
       <div className="grid grid-cols-1 items-center gap-10 md:grid-cols-2">
+
         {/* Image section */}
         <div className="relative mx-auto aspect-square w-full max-w-sm">
           <div className="relative h-full w-full overflow-hidden rounded-2xl">
@@ -107,7 +60,6 @@ export function Presentation() {
                 height={500}
                 className="h-full w-full object-cover object-center"
                 onError={(e) => {
-                  // Fallback to placeholder if image fails to load
                   const target = e.target as HTMLImageElement;
                   target.src = profile.fallbackSrc;
                 }}
@@ -117,7 +69,7 @@ export function Presentation() {
         </div>
 
         {/* Text content section */}
-        <div className="flex flex-col space-y">
+        <div className="flex flex-col space-y-4">
           <motion.div
             initial="hidden"
             animate="visible"
@@ -149,22 +101,30 @@ export function Presentation() {
             transition={{ delay: 0.6, duration: 0.5 }}
             className="mt-4 flex flex-wrap gap-2"
           >
-            {['AI', 'Full-Stack Developer', 'Los Angeles', 'Athlete', 'Startup Hustler', 'Musician', 'Tech Enthusiast', 'Family Man', 'Rapid Learner']
-.map(
-              (tag) => (
-                <span
-                  key={tag}
-                  className="bg-secondary text-secondary-foreground rounded-full px-3 py-1 text-sm"
-                >
-                  {tag}
-                </span>
-              )
-            )}
+            {[
+              'AI',
+              'Full-Stack Developer',
+              'Los Angeles',
+              'Athlete',
+              'Startup Hustler',
+              'Musician',
+              'Tech Enthusiast',
+              'Family Man',
+              'Rapid Learner',
+            ].map((tag) => (
+              <span
+                key={tag}
+                className="bg-secondary text-secondary-foreground rounded-full px-3 py-1 text-sm"
+              >
+                {tag}
+              </span>
+            ))}
           </motion.div>
         </div>
       </div>
     </div>
   );
 }
+
 
 export default Presentation;
