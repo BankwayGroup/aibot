@@ -11,6 +11,7 @@ import { motion } from 'framer-motion';
 import {
   BriefcaseBusiness,
   BriefcaseIcon,
+  ShoppingCart,   // <-- Add this here
   ChevronDown,
   ChevronRight,
   ChevronUp,
@@ -46,7 +47,7 @@ const questionConfig = [
   { key: 'Me', color: '#329696', icon: Laugh },
   { key: 'Projects', color: '#3E9858', icon: BriefcaseBusiness },
   { key: 'Skills', color: '#856ED9', icon: Layers },
-  { key: 'Fun', color: '#B95F9D', icon: PartyPopper },
+  { key: 'Packages', color: '#22c55e', icon: ShoppingCart },
   { key: 'Contact', color: '#C19433', icon: UserRoundSearch },
 ];
 
