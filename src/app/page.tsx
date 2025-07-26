@@ -11,8 +11,9 @@ import {
   Layers,
   PartyPopper,
   UserRoundSearch,
-  ArrowLeft,    // ✅ Add this line
-  ArrowRight,   // ✅ Also required for the submit button icon
+  ArrowLeft,
+  ArrowRight,
+  ShoppingCart,   // <-- Add this here
 } from 'lucide-react';
 
 import { Button } from '@/components/ui/button';
