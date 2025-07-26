@@ -67,14 +67,22 @@ export default function WelcomeModal({ trigger }: WelcomeModalProps) {
           >
             {/* Header */}
             <DialogHeader className="relative flex flex-row items-start justify-between px-8 pt-8 pb-6">
+
               <div>
-                <DialogTitle className="flex items-center gap-2 text-4xl font-bold tracking-tight">
+                <DialogTitle className="flex items-center gap-3 text-4xl font-bold tracking-tight">
+                  <img
+                    src="https://i.ibb.co/LXc7LfG/avatar-devzahir-modified.png"
+                    alt="Avatar of Dev Zahir"
+                    className="h-10 w-10 rounded-full"
+                  />
                   Welcome to AI Zahir
                 </DialogTitle>
+              
                 <DialogDescription className="mt-2 text-base">
-                  {/*My interactive AI portfolio assistant*/}
+                  {/* My interactive AI portfolio assistant */}
                 </DialogDescription>
               </div>
+
               <Button
                 variant="ghost"
                 size="icon"
