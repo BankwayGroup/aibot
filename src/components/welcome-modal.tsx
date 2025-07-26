@@ -71,7 +71,7 @@ export default function WelcomeModal({ trigger }: WelcomeModalProps) {
               <div>
                 <DialogTitle className="flex items-center gap-3 text-4xl font-bold tracking-tight">
                   <img
-                    src="https://i.ibb.co/LXc7LfG/avatar-devzahir-modified.png"
+                    src="/public/devzahir.png"
                     alt="Avatar of Dev Zahir"
                     className="h-10 w-10 rounded-full"
                   />
