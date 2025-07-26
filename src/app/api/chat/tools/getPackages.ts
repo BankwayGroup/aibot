@@ -2,29 +2,69 @@ import { tool } from "ai";
 import { z } from "zod";
 
 export const getPackages = tool({
-  description: 
+  description:
     "Shares details about my service tiers and pricing. Use when users ask about pricing, packages, services, or plans.",
   parameters: z.object({}),
   execute: async () => {
     return `
-Here’s the deal — I offer three solid packages tailored to what you need, whether it's a slick website or a powerful bot:
+Here’s the deal — I offer **three smart packages** tailored for whatever you're building — whether it's a sleek website or a powerful bot:
 
-🌱 **Starter Website or Bot — $80**  
-A clean, modern 1-page site or a basic bot with essential features.  
-Includes e-commerce setup, speed boosts, payment integration, social icons, plugins, and hosting support.  
-Delivered in 3 days with 2 revisions.
+---
 
-🚀 **Multi-Page Website or Bot — $165**  
-Up to 5 pages with dynamic features and user-friendly navigation, plus a bot with extra bells and whistles.  
-E-commerce for 20 products, opt-in forms, 3 plugins, payment setup, and hosting help included.  
-Delivered in 5 days with 3 revisions.
+### 🌱 Starter Website or Bot — **$80**
 
-💼 **E-Commerce Website or Bot — $425**  
-A full 10-page e-commerce powerhouse or an advanced bot with backend integration.  
-Supports 50 products, 5 plugins, payment processing, autoresponders, speed & hosting setup, and social media integration.  
-Delivered in 10 days with 5 revisions.
+A clean, modern 1-page site **or** a basic bot with just the right essentials.  
+Includes:  
+• E-commerce setup  
+• Speed optimization  
+• Payment integration  
+• Social media icons  
+• Plugin/extension setup  
+• Hosting support  
+• Opt-in form + autoresponder  
 
-Ready to build something awesome? Which package sounds like your vibe? 😎
+🕒 Delivery: **3 days**  
+🔁 Revisions: **2**
+
+---
+
+### 🚀 Multi-Page Website or Bot — **$165**
+
+A fully responsive 5-page website **or** a more dynamic bot with added features.  
+Perfect if you want more flexibility and functionality.  
+Includes:  
+• Up to 5 custom pages  
+• E-commerce for **20 products**  
+• 3 plugins/extensions  
+• Functionality enhancements  
+• Payment processing  
+• Hosting setup  
+• Opt-in forms  
+• Speed boost + social branding  
+
+🕒 Delivery: **5 days**  
+🔁 Revisions: **3**
+
+---
+
+### 💼 E-Commerce Website or Advanced Bot — **$425**
+
+The full package. A powerhouse 10-page site **or** an advanced AI-driven bot with backend logic.  
+Includes:  
+• E-commerce for **50 products**  
+• Backend integration  
+• 5 plugins/extensions  
+• Autoresponders + email flows  
+• Hosting + speed optimization  
+• Social media integration  
+• Full content management  
+
+🕒 Delivery: **10 days**  
+🔁 Revisions: **5**
+
+---
+
+🔥 Ready to start? Just pick your vibe, and we’ll make it real. Which one feels right to you?
     `.trim();
   },
 });
