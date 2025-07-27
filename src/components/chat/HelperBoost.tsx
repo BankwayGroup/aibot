@@ -39,8 +39,9 @@ const questions = {
   Projects: 'What are your projects? What are you working on right now?',
   Skills: 'What are your skills? Give me a list of your soft and hard skills.',
   Fun: "What the craziest thing you've ever done? (mb?) What are your hobbies? ",
-  Contact:
-    'How can I reach you? What kind of project would make you say "yes" immediately?',
+  Contact:'How can I reach you? What kind of project would make you say "yes" immediately?',
+  Packages: 'What packages or services do you offer? What do they include?',
+
 };
 
 const questionConfig = [
