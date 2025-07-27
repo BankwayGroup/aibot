@@ -1,3 +1,4 @@
+// src/components/ui/packages.tsx
 'use client';
 
 import { motion } from 'framer-motion';
@@ -5,61 +6,7 @@ import { Button } from '@/components/ui/button';
 import { ShoppingCart } from 'lucide-react';
 import React from 'react';
 
-const packages = [
-  {
-    title: '🌱 Starter Website or Bot',
-    price: '$80',
-    features: [
-      'E-commerce functionality',
-      '1 beautifully designed page',
-      'Content upload & management',
-      'Speed optimization',
-      'Social media icons',
-      'Plugin/extension setup',
-      'Payment processing integration',
-      'Opt-in form + autoresponder',
-      'Hosting setup support',
-    ],
-    delivery: '3 days',
-    revisions: '2',
-  },
-  {
-    title: '🤖 Multi-Page Website or Bot',
-    price: '$165',
-    features: [
-      'Up to 5 custom pages',
-      'Content upload & management',
-      'E-commerce for 20 products',
-      '3 plugins/extensions',
-      'Functionality enhancements',
-      'Payment integration',
-      'Opt-in form & autoresponder',
-      'Speed optimization',
-      'Hosting setup assistance',
-      'Social media branding',
-    ],
-    delivery: '5 days',
-    revisions: '3',
-  },
-  {
-    title: '💼 E-Commerce Website or Advanced Bot',
-    price: '$425',
-    features: [
-      'Up to 10 custom pages',
-      'E-commerce for 50 products',
-      'Backend integration',
-      'Content upload & management',
-      '5 plugins/extensions',
-      'Payment integration',
-      'Opt-in + email flows',
-      'Speed optimization',
-      'Hosting support',
-      'Social media icons',
-    ],
-    delivery: '10 days',
-    revisions: '5',
-  },
-];
+import { packages } from '@/chat/packagesData';
 
 export default function PackageCards() {
   return (
