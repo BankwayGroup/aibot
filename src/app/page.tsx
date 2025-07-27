@@ -25,7 +25,6 @@ const questions = {
   Me: 'Who are you? I want to know more about you.',
   Projects: 'What are your projects? What are you working on right now?',
   Skills: 'What are your skills? Give me a list of your soft and hard skills.',
-  Fun: 'What’s the craziest thing you’ve ever done? What are your hobbies?',
   Contact: 'How can I contact you?',
   Packages: 'What packages or services do you offer? What do they include?',
 } as const;
@@ -34,8 +33,8 @@ const questionConfig = [
   { key: 'Me', color: '#329696', icon: Laugh },
   { key: 'Projects', color: '#3E9858', icon: BriefcaseBusiness },
   { key: 'Skills', color: '#856ED9', icon: Layers },
-  { key: 'Packages', color: '#22c55e', icon: ShoppingCart },
   { key: 'Contact', color: '#C19433', icon: UserRoundSearch },
+  { key: 'Packages', color: '#22c55e', icon: ShoppingCart },
 ] as const;
 
 export default function Home() {
