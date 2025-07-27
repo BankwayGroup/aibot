@@ -73,22 +73,22 @@ export function SimplifiedChatView({
         )}
 
         {/* Text content */}
-        {hasTextContent && (
-          <div className="w-full">
-            <ChatBubble variant="received" className="w-full">
-              <ChatBubbleMessage className="w-full">
-                <ChatMessageContent
-                  message={message}
-                  isLast={true}
-                  isLoading={isLoading}
-                  reload={reload}
-                  addToolResult={addToolResult}
-                  skipToolRendering={true}
-                />
-              </ChatBubbleMessage>
-            </ChatBubble>
-          </div>
-        )}
+{hasTextContent && currentTool[0]?.toolName !== 'getPackages' && (
+  <div className="w-full">
+    <ChatBubble variant="received" className="w-full">
+      <ChatBubbleMessage className="w-full">
+        <ChatMessageContent
+          message={message}
+          isLast={true}
+          isLoading={isLoading}
+          reload={reload}
+          addToolResult={addToolResult}
+          skipToolRendering={true}
+        />
+      </ChatBubbleMessage>
+    </ChatBubble>
+  </div>
+)}
 
         {/* Add some padding at the bottom for better scrolling experience */}
         <div className="pb-4"></div>
