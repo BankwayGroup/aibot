@@ -2,7 +2,7 @@
 import { tool } from "ai";
 import { z } from "zod";
 
-// Import the package data and buy link
+// Import the data from your packageData file
 import { packages, buyLink } from '@/components/ui/chat/packageData';
 
 export const getPackages = tool({
