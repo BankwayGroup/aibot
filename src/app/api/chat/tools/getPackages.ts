@@ -2,73 +2,16 @@
 import { tool } from "ai";
 import { z } from "zod";
 
+// Import the package data and buy link
+import { packages, buyLink } from '@/components/ui/chat/packageData';
+
 export const getPackages = tool({
   description: "Returns structured package data.",
   parameters: z.object({}),
   execute: async () => {
     return {
-      packages: [
-        {
-          id: 'starter',
-          title: 'Starter Website or Bot',
-          emoji: '🌱',
-          price: 80,
-          features: [
-            'E-commerce functionality',
-            '1 beautifully designed page',
-            'Content upload & management',
-            'Speed optimization',
-            'Social media icons',
-            'Plugin/extension setup',
-            'Payment integration',
-            'Opt‑in form + autoresponder',
-            'Hosting setup support',
-          ],
-          delivery: '3 days',
-          revisions: 2,
-        },
-        {
-          id: 'multi',
-          title: 'Multi‑Page Website or Bot',
-          emoji: '🤖',
-          price: 165,
-          features: [
-            'Up to 5 custom pages',
-            'Content upload & management',
-            'E‑commerce for 20 products',
-            '3 plugins/extensions',
-            'Functionality enhancements',
-            'Payment integration',
-            'Opt‑in form & autoresponder',
-            'Speed optimization',
-            'Hosting setup assistance',
-            'Social media branding',
-          ],
-          delivery: '5 days',
-          revisions: 3,
-        },
-        {
-          id: 'ecommerce',
-          title: 'E‑Commerce Website or Advanced Bot',
-          emoji: '💼',
-          price: 425,
-          features: [
-            'Up to 10 custom pages',
-            'E‑commerce for 50 products',
-            'Backend integration',
-            'Content upload & management',
-            '5 plugins/extensions',
-            'Payment integration',
-            'Opt‑in + email flows',
-            'Speed optimization',
-            'Hosting support',
-            'Social media icons',
-          ],
-          delivery: '10 days',
-          revisions: 5,
-        },
-      ],
-      buyLink: 'https://www.fiverr.com/s/m5Vb1g8'
+      packages,
+      buyLink,
     };
   },
 });
