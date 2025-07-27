@@ -1,4 +1,3 @@
-// src/components/chat/tool-renderer.tsx
 import { Contact } from '../contact';
 import Crazy from '../crazy';
 import InternshipCard from '../InternshipCard';
@@ -83,6 +82,46 @@ export default function ToolRenderer({
             return (
               <div key={toolCallId} className="w-full rounded-lg">
                 <InternshipCard />
+              </div>
+            );
+
+          case 'getPackages':
+            return (
+              <div key={toolCallId} className="w-full space-y-6">
+                {tool.result?.packages?.map((pkg: any, index: number) => (
+                  <div
+                    key={index}
+                    className="rounded-xl border bg-white p-6 shadow-md transition hover:shadow-lg dark:bg-gray-900 dark:border-gray-700"
+                  >
+                    <div className="flex items-center justify-between mb-2">
+                      <h2 className="text-xl font-semibold text-gray-800 dark:text-white">
+                        {pkg.title}
+                      </h2>
+                      <span className="text-lg font-bold text-green-600">
+                        ${pkg.price}
+                      </span>
+                    </div>
+
+                    <p className="mb-3 text-sm text-gray-600 dark:text-gray-300">
+                      Delivery in {pkg.deliveryTime} days • {pkg.revisions} Revisions
+                    </p>
+
+                    <ul className="mb-4 list-disc list-inside text-sm text-gray-700 dark:text-gray-200">
+                      {pkg.features.map((feature: string, i: number) => (
+                        <li key={i}>{feature}</li>
+                      ))}
+                    </ul>
+
+                    <a
+                      href={tool.result?.buyLink || '#'}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-block rounded-md bg-black px-4 py-2 text-white hover:bg-gray-800 dark:bg-white dark:text-black dark:hover:bg-gray-300 transition"
+                    >
+                      Purchase
+                    </a>
+                  </div>
+                ))}
               </div>
             );
 
