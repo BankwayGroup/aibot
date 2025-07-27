@@ -59,7 +59,28 @@ const specialQuestions = [
   'What projects are you most proud of?',
   'What are your skills?',
   'How can I reach you?',
+  'How can I book a service?',
+  'Can I inquire about a custom project?',
+  'Do you offer consultations?',
+  'What’s your pricing?',
+  'How long does a project usually take?',
+  'Can I request revisions?',
+  'How do payments work?',
+  'Do you work with international clients?',
+  'What’s your availability like?',
+  'What technologies do you specialize in?',
+  'Can you build full-stack applications?',
+  'Do you work with APIs or third-party integrations?',
+  'What frontend frameworks do you use?',
+  'Can you optimize a site for speed and SEO?',
+  'Do you write clean, scalable code?',
+  'Can I see examples of your code?',
+  'What is your approach to responsive design?',
+  'Do you use version control like Git?',
+  'Are you comfortable with databases?',
+  'Can you help debug or improve existing code?',
 ];
+
 
 const questionsByCategory = [
   {
