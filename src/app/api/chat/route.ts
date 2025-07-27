@@ -9,7 +9,6 @@ import { getProjects } from './tools/getProjects';
 import { getResume } from './tools/getResume';
 import { getSkills } from './tools/getSkills';
 import { getSports } from './tools/getSport';
-import { getPackages } from './tools/getPackages';  // add this import at the top
 
 export const maxDuration = 30;
 
@@ -43,7 +42,6 @@ export async function POST(req: Request) {
       getSports,
       getCrazy,
       getInternship,
-      getPackages,  // add here
     };
 
     const result = streamText({
