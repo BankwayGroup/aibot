@@ -35,115 +35,175 @@ interface HelperBoostProps {
 }
 
 const questions = {
-  Me: 'Who are you? I want to know more about you.',
-  Projects: 'What are your projects? What are you working on right now?',
-  Skills: 'What are your skills? Give me a list of your soft and hard skills.',
-  Fun: "What the craziest thing you've ever done? (mb?) What are your hobbies? ",
-  Contact:'How can I reach you? What kind of project would make you say "yes" immediately?',
-  Packages: 'What packages or services do you offer? What do they include?',
-
+  Me: [
+    "Who are you?",
+    "What inspired your journey into tech?",
+    "What motivates your work?",
+    "How did you first get into programming?",
+    "Did you come from a traditional background?",
+    "What’s your core philosophy as a developer?",
+    "What keeps you going when things get hard?",
+    "Who do you look up to professionally?",
+    "What’s one lesson you’ve learned the hard way?",
+    "What’s something unique about your story?",
+    "What kind of work excites you the most?"
+  ],
+  Projects: [
+    "What projects are you most proud of?",
+    "Can you walk me through a favorite project?",
+    "What tech stack did you use and why?",
+    "How did you solve the biggest challenge?",
+    "What role did you play in the team?",
+    "Was it a solo or collaborative project?",
+    "Can I see a live demo?",
+    "What lessons did you learn from the project?",
+    "Did you face any major bugs or setbacks?",
+    "How did you test and deploy it?"
+  ],
+  Skills: [
+    "What are your strongest technical skills?",
+    "What non-technical skills set you apart?",
+    "What programming languages do you use?",
+    "Do you use TypeScript?",
+    "How do you debug code?",
+    "What’s your preferred code editor setup?",
+    "Are you familiar with containerization tools like Docker?",
+    "How do you manage team-based version control?",
+    "Do you use CI/CD pipelines?",
+    "How do you structure your projects?",
+    "What design tools or systems do you use?",
+    "How do you stay current with industry trends?"
+  ],
+  Fun: [
+    "Mac or PC?",
+    "What’s your favorite programming meme?",
+    "What do you do outside of tech?",
+    "Do you collect anything?",
+    "What’s your weirdest productivity habit?",
+    "What’s your coding soundtrack?",
+    "What’s your favorite keyboard shortcut?",
+    "Dark mode or light mode?",
+    "What game do you play when taking a break?",
+    "If you weren’t in tech, what would you be doing?"
+  ],
+  Contact: [
+    "How can I get in touch with you?",
+    "What’s your availability like?",
+    "Do you work with international clients?",
+    "Are you open to contract work?",
+    "Do you sign NDAs?",
+    "How quickly can you start a new project?",
+    "What’s the best way to collaborate with you?"
+  ],
+  Packages: [
+    "What services do you offer?",
+    "Do you have pricing tiers?",
+    "What’s your revision policy?",
+    "Do you offer custom projects?",
+    "How long does each package take?",
+    "Do you offer support post-delivery?",
+    "Do you offer consultations or strategy calls?"
+  ]
 };
 
-const questionConfig = [
-  { key: 'Me', color: '#329696', icon: Laugh },
-  { key: 'Projects', color: '#3E9858', icon: BriefcaseBusiness },
-  { key: 'Skills', color: '#856ED9', icon: Layers },
-  { key: 'Packages', color: '#22c55e', icon: ShoppingCart },
-  { key: 'Contact', color: '#C19433', icon: UserRoundSearch },
-];
-
-// Helper drawer data
 const specialQuestions = [
-  'Who are you?',
-  'Can I see your resume?',
-  'What projects are you most proud of?',
-  'What are your skills?',
-  'How can I reach you?',
-  'How can I book a service?',
-  'Can I inquire about a custom project?',
-  'Do you offer consultations?',
-  'What’s your pricing?',
-  'How long does a project usually take?',
-  'Can I request revisions?',
-  'How do payments work?',
-  'Do you work with international clients?',
-  'What’s your availability like?',
-  'What technologies do you specialize in?',
-  'Can you build full-stack applications?',
-  'Do you work with APIs or third-party integrations?',
-  'What frontend frameworks do you use?',
-  'Can you optimize a site for speed and SEO?',
-  'Do you write clean, scalable code?',
-  'Can I see examples of your code?',
-  'What is your approach to responsive design?',
-  'Do you use version control like Git?',
-  'Are you comfortable with databases?',
-  'Can you help debug or improve existing code?',
+  "Can I see your resume?",
+  "Can I inquire about a custom project?",
+  "Do you offer consultations?",
+  "How do payments work?",
+  "Can I request revisions?",
+  "Can you build full-stack applications?",
+  "What frontend frameworks do you use?",
+  "Can I see examples of your code?",
+  "Do you follow accessibility best practices?",
+  "How do you handle deployment?",
+  "What security practices do you follow?",
+  "Do you offer SEO optimization?",
+  "Do you maintain sites after launch?",
+  "How do you handle client communication?",
+  "Do you work solo or with collaborators?",
+  "What kind of projects excite you the most?",
+  "Where are you located?",
+  "Are you open to full-time roles?"
 ];
-
 
 const questionsByCategory = [
   {
-    id: 'me',
-    name: 'Me',
-    icon: UserSearch,
+    id: 'development',
+    name: 'Development',
+    icon: CodeIcon,
     questions: [
-      'Who are you?',
-      'What are your passions?',
-      'How did you get started in tech?',
-      'Where do you see yourself in 5 years?',
-    ],
+      'How do you write clean, maintainable code?',
+      'What’s your experience with performance optimization?',
+      'How do you manage state in complex apps?',
+      'How do you test your applications?',
+      'What’s your approach to accessibility?',
+      'How do you approach code reviews?',
+      'What’s your favorite frontend tool?',
+      'Have you worked with APIs extensively?',
+      'What deployment workflows have you used?',
+      'How do you handle error tracking and logging?' 
+    ]
   },
   {
     id: 'professional',
     name: 'Professional',
     icon: BriefcaseIcon,
     questions: [
-      'Can I see your resume?',
-      'What makes you a valuable team member?',
-      'Where are you working now?',
-      'Why should I hire you?',
-      "What's your educational background?",
-    ],
+      'Why should someone hire you?',
+      'What makes you reliable to work with?',
+      'Have you led any dev teams?',
+      'Do you have experience working with stakeholders?',
+      'How do you document your work?',
+      'What is your communication style?',
+      'How do you handle deadlines?',
+      'Have you worked asynchronously?',
+      'What’s your ideal work environment?'
+    ]
   },
   {
-    id: 'projects',
-    name: 'Projects',
-    icon: CodeIcon,
-    questions: ['What projects are you most proud of?'],
-  },
-  {
-id: 'skills',
-name: 'Skills',
-icon: GraduationCapIcon,
-questions: [
-  'What programming languages and technologies are you proficient in?',
-  'Can you describe your experience working with full-stack development?',
-  'How do you approach debugging and problem-solving in your projects?',
-  'What development tools and workflows do you prefer?',
-  'Have you contributed to any open-source projects or collaborated in teams?',
-],
-
+    id: 'skills',
+    name: 'Skills & Tools',
+    icon: GraduationCapIcon,
+    questions: [
+      'What frameworks do you prefer and why?',
+      'How do you choose the right tools for a project?',
+      'What’s your approach to debugging?',
+      'Are you familiar with agile development?',
+      'What tools help with productivity?',
+      'What do you use for database management?',
+      'How do you handle API integrations?',
+      'Have you worked with headless CMSs?',
+      'Do you use design tokens or themes in projects?'
+    ]
   },
   {
     id: 'fun',
     name: 'Fun',
     icon: PartyPopper,
     questions: [
-      'Mac or PC?',
-      'What are you certain about that 90% get wrong?',
-    ],
+      'What’s something most people don’t know about you?',
+      'What’s the weirdest bug you’ve ever encountered?',
+      'Do you use emojis in commit messages?',
+      'What was your first computer?',
+      'Do you prefer tabs or spaces?',
+      'What’s your dream side project?',
+      'Have you ever built something silly for fun?'
+    ]
   },
   {
     id: 'contact',
     name: 'Contact & Future',
     icon: MailIcon,
     questions: [
-      'How can I reach you?',
-      "What kind of project would make you say 'yes' immediately?",
-      'Where are you located?',
-    ],
-  },
+      'Where can someone reach you?',
+      'Are you open to collaborations?',
+      'Do you offer ongoing support or retainers?',
+      'Are you open to speaking opportunities?',
+      'What’s your preferred communication method?',
+      'Do you work on long-term contracts?' 
+    ]
+  }
 ];
 
 // Animated Chevron component
