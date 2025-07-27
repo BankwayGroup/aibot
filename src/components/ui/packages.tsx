@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 import { ShoppingCart } from 'lucide-react';
 import React from 'react';
 
-import { packages } from './packageData';
+import { packages } from './chat/packageData';
 
 export default function PackageCards() {
   return (
