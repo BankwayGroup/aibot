@@ -116,27 +116,31 @@ export function Presentation() {
   };
 
   return (
-<div className="relative mx-auto w-full max-w-sm overflow-hidden rounded-xl border shadow">
-  <motion.div
-    initial={{ scale: 0.92, opacity: 0 }}
-    animate={{ scale: 1, opacity: 1 }}
-    transition={{ duration: 0.8, ease: [0.19, 1, 0.22, 1] }}
-    className="relative h-[300px] w-full bg-white"
-  >
-    <Image
-      src={imgError ? profile.fallbackSrc : profile.src}
-      alt={profile.name}
-      fill
-      className="object-contain"
-      onError={() => setImgError(true)}
-      priority
-    />
-  </motion.div>
-</div>
-
+       <div className="mx-auto w-full max-w-5xl py-6 font-sans">
+      <div className="grid grid-cols-1 items-center gap-10 md:grid-cols-2">
+        {/* Image section */}
+        <div className="relative mx-auto aspect-square w-full max-w-sm">
+          <div className="relative h-full w-full overflow-hidden rounded-xl border shadow bg-white">
+            <motion.div
+              initial={{ scale: 0.92, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ duration: 0.8, ease: [0.19, 1, 0.22, 1] }}
+              className="h-full w-full"
+            >
+              <Image
+                src={imgError ? profile.fallbackSrc : profile.src}
+                alt={profile.name}
+                fill
+                className="object-contain"
+                onError={() => setImgError(true)}
+                priority
+              />
+            </motion.div>
+          </div>
+        </div>
 
         {/* Text content section */}
-        <div className="flex flex-col space-y">
+        <div className="flex flex-col space-y-4">
           <motion.div
             initial="hidden"
             animate="visible"
@@ -151,6 +155,7 @@ export function Presentation() {
               <p className="text-muted-foreground">{profile.location}</p>
             </div>
           </motion.div>
+
 
           <motion.p
             initial="hidden"
