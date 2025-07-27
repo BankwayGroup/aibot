@@ -303,11 +303,11 @@ export default function HelperBoost({
   const [isVisible, setIsVisible] = useState(true);
   const [open, setOpen] = useState(false);
 
-  const handleQuestionClick = (questionKey: string) => {
-    if (submitQuery) {
-      submitQuery(questions[questionKey as keyof typeof questions]);
-    }
-  };
+const handleQuestionClick = (questionKey: string, questionIndex: number) => {
+  if (submitQuery) {
+    submitQuery(questions[questionKey as keyof typeof questions][questionIndex]);
+  }
+};
 
   const handleDrawerQuestionClick = (question: string) => {
     if (submitQuery) {
