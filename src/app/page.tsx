@@ -116,9 +116,8 @@ export default function Home() {
         />
       </div>
 <div className="absolute top-6 left-1/2 -translate-x-1/2 z-20 flex items-center gap-3">
-  <span className="text-xl font-semibold text-gray-900 dark:text-white">Zahir</span>
   <a
-    href="https://t.me/devzahirbot"
+    href="https://t.me/devzahirbot?start=start"
     target="_blank"
     rel="noopener noreferrer"
     className="font-medium text-[#00bfff] transition duration-300 hover:text-[#33ccff]"
@@ -126,7 +125,7 @@ export default function Home() {
       textShadow: '0 0 6px #00bfff',
     }}
   >
-    Telegram
+    https://t.me/devzahirbot
   </a>
 </div>
 
