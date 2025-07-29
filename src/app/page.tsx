@@ -116,17 +116,20 @@ export default function Home() {
         />
       </div>
 <div className="absolute top-6 left-1/2 -translate-x-1/2 z-20 flex items-center gap-3">
-  <span className="text-lg font-semibold text-gray-900 dark:text-white">Zahir</span>
+  <span className="text-xl font-semibold text-gray-900 dark:text-white">Zahir</span>
   <a
     href="https://t.me/devzahirbot"
     target="_blank"
     rel="noopener noreferrer"
-    className="text-[#00bfff] font-medium transition hover:text-[#33ccff]"
-    style={{ textShadow: '0 0 6px #00bfff' }}
+    className="font-medium text-[#00bfff] transition duration-300 hover:text-[#33ccff]"
+    style={{
+      textShadow: '0 0 6px #00bfff',
+    }}
   >
     Telegram
   </a>
 </div>
+
 
       <div className="absolute top-6 left-6 z-20 flex flex-col items-start gap-2 sm:flex-row">
         <button
