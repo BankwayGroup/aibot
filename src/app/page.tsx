@@ -1,20 +1,18 @@
 'use client';
-import { FaTelegramPlane } from 'react-icons/fa'; // Top of your file
 
+import { FaTelegramPlane } from 'react-icons/fa'; // Telegram icon
 import { useEffect, useRef, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { motion } from 'framer-motion';
-import Image from 'next/image';
 import Typed from 'typed.js';
 import {
   BriefcaseBusiness,
   Laugh,
   Layers,
-  PartyPopper,
   UserRoundSearch,
   ArrowLeft,
   ArrowRight,
-  ShoppingCart,   // <-- Add this here
+  ShoppingCart,
 } from 'lucide-react';
 
 import { Button } from '@/components/ui/button';
@@ -45,11 +43,8 @@ export default function Home() {
   const router = useRouter();
   const [isDark, setIsDark] = useState(false);
 
-  const goToChat = (query: string) => {
-    router.push(`/chat?query=${encodeURIComponent(query)}`);
-  };
-
   useEffect(() => {
+    // Initialize typed.js
     const isMobile = typeof window !== 'undefined' && window.innerWidth < 640;
 
     const typed = new Typed(typedRef.current, {
@@ -84,10 +79,32 @@ export default function Home() {
       smartBackspace: true,
     });
 
+    // On mount, check if dark mode is set
+    if (typeof window !== 'undefined') {
+      const html = document.documentElement;
+      const darkModeOn = html.classList.contains('dark');
+      setIsDark(darkModeOn);
+    }
+
     return () => typed.destroy();
   }, []);
 
-  // Variants (if you want to use them later)
+  // Toggle dark mode by toggling 'dark' class on <html>
+  const toggleDarkMode = () => {
+    const html = document.documentElement;
+    if (html.classList.contains('dark')) {
+      html.classList.remove('dark');
+      setIsDark(false);
+    } else {
+      html.classList.add('dark');
+      setIsDark(true);
+    }
+  };
+
+  const goToChat = (query: string) => {
+    router.push(`/chat?query=${encodeURIComponent(query)}`);
+  };
+
   const topElementVariants = {
     hidden: { opacity: 0, y: -60 },
     visible: {
@@ -115,19 +132,27 @@ export default function Home() {
           size="sm"
           repoUrl="https://github.com/devzahirx3/DevZahir"
         />
+        {/* Dark Mode Toggle Button */}
+        <button
+          onClick={toggleDarkMode}
+          aria-label="Toggle Dark Mode"
+          className="ml-4 rounded bg-gray-300 dark:bg-gray-700 p-2 text-sm font-semibold text-gray-900 dark:text-gray-100 transition hover:bg-gray-400 dark:hover:bg-gray-600"
+        >
+          {isDark ? '🌞 Light Mode' : '🌙 Dark Mode'}
+        </button>
       </div>
-<div className="absolute top-6 left-1/2 -translate-x-1/2 z-20 flex items-center gap-2">
-  <FaTelegramPlane className="text-[#00bfff] h-5 w-5" />
-  <a
-    href="https://t.me/devzahirbot?start=start"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="text-neon font-medium text-lg"
-  >
-    https://t.me/devzahirbot
-  </a>
-</div>
 
+      <div className="absolute top-6 left-1/2 -translate-x-1/2 z-20 flex items-center gap-2">
+        <FaTelegramPlane className="text-[#00bfff] h-5 w-5" />
+        <a
+          href="https://t.me/devzahirbot?start=start"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-neon font-medium text-lg"
+        >
+          https://t.me/devzahirbot
+        </a>
+      </div>
 
       <div className="absolute top-6 left-6 z-20 flex flex-col items-start gap-2 sm:flex-row">
         <button
@@ -149,7 +174,7 @@ export default function Home() {
         </button>
       </div>
 
-  <div className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden px-4 pb-10 md:pb-20">
+      <div className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden px-4 pb-10 md:pb-20">
         <div className="pointer-events-none absolute inset-x-0 bottom-0 flex justify-center overflow-hidden">
           <div
             className="hidden bg-gradient-to-b from-neutral-500/10 to-neutral-500/0 bg-clip-text text-[10rem] leading-none font-black text-transparent select-none sm:block lg:text-[16rem]"
@@ -169,18 +194,15 @@ export default function Home() {
           <h2 className="text-secondary-foreground mt-1 text-xl font-semibold md:text-2xl">
             Hey, I'm Dev Zahir 👋
           </h2>
-<h1
-  className="text-3xl font-bold sm:text-5xl md:text-6xl lg:text-7xl text-center leading-tight"
-  style={{ minHeight: '1.2em' }}
->
-  <span
-    ref={typedRef}
-    className="inline-block min-w-[22ch] whitespace-nowrap"
-  />
-</h1>
-
-
-
+          <h1
+            className="text-3xl font-bold sm:text-5xl md:text-6xl lg:text-7xl text-center leading-tight"
+            style={{ minHeight: '1.2em' }}
+          >
+            <span
+              ref={typedRef}
+              className="inline-block min-w-[22ch] whitespace-nowrap"
+            />
+          </h1>
         </motion.div>
 
         <motion.div
