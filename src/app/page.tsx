@@ -136,7 +136,22 @@ export default function Home() {
         </button>
       </div>
 
-      <div className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden px-4 pb-10 md:pb-20">
+  <div className="absolute top-4 left-1/2 transform -translate-x-1/2 flex items-center space-x-3 z-10">
+    <span className="text-xl font-semibold text-gray-900 dark:text-white">Zahir</span>
+    <a
+      href="https://t.me/devzahirbot"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="text-neonBlue hover:text-neonBlueHover font-medium"
+      style={{
+        textDecoration: 'none',
+        color: '#00bfff', // neon blue
+        textShadow: '0 0 8px #00bfff',
+      }}
+    >
+      Telegram
+    </a>
+  </div>
         <div className="pointer-events-none absolute inset-x-0 bottom-0 flex justify-center overflow-hidden">
           <div
             className="hidden bg-gradient-to-b from-neutral-500/10 to-neutral-500/0 bg-clip-text text-[10rem] leading-none font-black text-transparent select-none sm:block lg:text-[16rem]"
