@@ -13,6 +13,8 @@ import {
   ArrowLeft,
   ArrowRight,
   ShoppingCart,
+  Sun,
+  Moon,
 } from 'lucide-react';
 
 import { Button } from '@/components/ui/button';
@@ -44,7 +46,6 @@ export default function Home() {
   const [isDark, setIsDark] = useState(false);
 
   useEffect(() => {
-    // Initialize typed.js
     const isMobile = typeof window !== 'undefined' && window.innerWidth < 640;
 
     const typed = new Typed(typedRef.current, {
@@ -79,11 +80,9 @@ export default function Home() {
       smartBackspace: true,
     });
 
-    // On mount, check if dark mode is set
     if (typeof window !== 'undefined') {
       const html = document.documentElement;
-      const darkModeOn = html.classList.contains('dark');
-      setIsDark(darkModeOn);
+      setIsDark(html.classList.contains('dark'));
     }
 
     return () => typed.destroy();
@@ -125,47 +124,53 @@ export default function Home() {
 
   return (
     <>
-      <div className="absolute top-6 right-8 z-20 flex items-center gap-2">
+      <div className="absolute top-6 right-8 z-20 flex items-center gap-4">
+        {/* Dark Mode Toggle Button */}
+        <button
+          onClick={toggleDarkMode}
+          aria-label="Toggle Dark Mode"
+          title={isDark ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
+          className="flex items-center justify-center rounded-full p-2 text-gray-700 hover:bg-gray-200 dark:text-gray-200 dark:hover:bg-gray-700 transition focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-blue-500"
+          type="button"
+        >
+          {isDark ? (
+            <Sun className="h-6 w-6" />
+          ) : (
+            <Moon className="h-6 w-6" />
+          )}
+        </button>
+
         <GithubButton
           animationDuration={1.5}
           label="Star"
           size="sm"
           repoUrl="https://github.com/devzahirx3/DevZahir"
         />
-        {/* Dark Mode Toggle Button */}
-        <button
-          onClick={toggleDarkMode}
-          aria-label="Toggle Dark Mode"
-          className="ml-4 rounded bg-gray-300 dark:bg-gray-700 p-2 text-sm font-semibold text-gray-900 dark:text-gray-100 transition hover:bg-gray-400 dark:hover:bg-gray-600"
-        >
-          {isDark ? '🌞 Light Mode' : '🌙 Dark Mode'}
-        </button>
       </div>
 
-<div className="absolute top-6 left-1/2 -translate-x-1/2 z-20 flex items-center gap-2">
-  <FaTelegramPlane className="text-[#00bfff] h-5 w-5" />
-  <a
-    href="https://t.me/devzahirbot?start=start"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="text-neon font-medium text-lg underline"
-  >
-    https://t.me/devzahirbot
-  </a>
-</div>
-
+      <div className="absolute top-6 left-1/2 -translate-x-1/2 z-20 flex items-center gap-2">
+        <FaTelegramPlane className="text-[#00bfff] h-5 w-5" />
+        <a
+          href="https://t.me/devzahirbot?start=start"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-neon font-medium text-lg underline"
+        >
+          https://t.me/devzahirbot
+        </a>
+      </div>
 
       <div className="absolute top-6 left-6 z-20 flex flex-col items-start gap-2 sm:flex-row">
         <button
           onClick={() => (window.location.href = 'https://devzahir.com')}
-          className="relative flex cursor-pointer items-center gap-2 rounded-full border bg-white/30 px-4 py-1.5 text-sm font-medium text-black shadow-md backdrop-blur-lg transition hover:bg-white/60 dark:border-white dark:text-white dark:hover:bg-neutral-800"
+          className="relative flex cursor-pointer items-center gap-2 rounded-full border bg-white/30 px-4 py-1.5 text-sm font-medium text-black shadow-md backdrop-blur-lg transition hover:bg-white/60 dark:border-white dark:bg-neutral-800 dark:text-white dark:hover:bg-neutral-700"
         >
           <ArrowLeft className="h-5 w-5" />
           Back
         </button>
         <button
           onClick={() => goToChat('Are you looking for an internship?')}
-          className="relative flex cursor-pointer items-center gap-2 rounded-full border bg-white/30 px-4 py-1.5 text-sm font-medium text-black shadow-md backdrop-blur-lg transition hover:bg-white/60 dark:border-white dark:text-white dark:hover:bg-neutral-800"
+          className="relative flex cursor-pointer items-center gap-2 rounded-full border bg-white/30 px-4 py-1.5 text-sm font-medium text-black shadow-md backdrop-blur-lg transition hover:bg-white/60 dark:border-white dark:bg-neutral-800 dark:text-white dark:hover:bg-neutral-700"
         >
           <span className="relative flex h-2 w-2">
             <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75"></span>
@@ -175,7 +180,7 @@ export default function Home() {
         </button>
       </div>
 
-      <div className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden px-4 pb-10 md:pb-20">
+      <div className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden px-4 pb-10 md:pb-20 bg-background text-foreground dark:bg-background dark:text-foreground">
         <div className="pointer-events-none absolute inset-x-0 bottom-0 flex justify-center overflow-hidden">
           <div
             className="hidden bg-gradient-to-b from-neutral-500/10 to-neutral-500/0 bg-clip-text text-[10rem] leading-none font-black text-transparent select-none sm:block lg:text-[16rem]"
@@ -245,9 +250,9 @@ export default function Home() {
                 key={key}
                 onClick={() => goToChat(questions[key])}
                 variant="outline"
-                className="border-border hover:bg-border/30 aspect-square w-full cursor-pointer rounded-2xl border bg-white/30 py-8 shadow-none backdrop-blur-lg active:scale-95 md:p-10"
+                className="border-border hover:bg-border/30 aspect-square w-full cursor-pointer rounded-2xl border bg-white/30 py-8 shadow-none backdrop-blur-lg active:scale-95 md:p-10 dark:border-neutral-700 dark:bg-neutral-800 dark:hover:bg-neutral-700"
               >
-                <div className="flex h-full flex-col items-center justify-center gap-1 text-gray-700">
+                <div className="flex h-full flex-col items-center justify-center gap-1 text-gray-700 dark:text-gray-300">
                   <Icon size={22} strokeWidth={2} color={color} />
                   <span className="text-xs font-medium sm:text-sm">{key}</span>
                 </div>
