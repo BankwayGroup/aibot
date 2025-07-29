@@ -142,17 +142,18 @@ export default function Home() {
         </button>
       </div>
 
-      <div className="absolute top-6 left-1/2 -translate-x-1/2 z-20 flex items-center gap-2">
-        <FaTelegramPlane className="text-[#00bfff] h-5 w-5" />
-        <a
-          href="https://t.me/devzahirbot?start=start"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-neon font-medium text-lg"
-        >
-          https://t.me/devzahirbot
-        </a>
-      </div>
+<div className="absolute top-6 left-1/2 -translate-x-1/2 z-20 flex items-center gap-2">
+  <FaTelegramPlane className="text-[#00bfff] h-5 w-5" />
+  <a
+    href="https://t.me/devzahirbot?start=start"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="text-neon font-medium text-lg underline"
+  >
+    https://t.me/devzahirbot
+  </a>
+</div>
+
 
       <div className="absolute top-6 left-6 z-20 flex flex-col items-start gap-2 sm:flex-row">
         <button
