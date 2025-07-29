@@ -1,4 +1,5 @@
 'use client';
+import { FaTelegramPlane } from 'react-icons/fa'; // Top of your file
 
 import { useEffect, useRef, useState } from 'react';
 import { useRouter } from 'next/navigation';
@@ -115,15 +116,13 @@ export default function Home() {
           repoUrl="https://github.com/devzahirx3/DevZahir"
         />
       </div>
-<div className="absolute top-6 left-1/2 -translate-x-1/2 z-20 flex items-center gap-3">
+<div className="absolute top-6 left-1/2 -translate-x-1/2 z-20 flex items-center gap-2">
+  <FaTelegramPlane className="text-[#00bfff] h-5 w-5" />
   <a
     href="https://t.me/devzahirbot?start=start"
     target="_blank"
     rel="noopener noreferrer"
-    className="font-medium text-[#00bfff] transition duration-300 hover:text-[#33ccff]"
-    style={{
-      textShadow: '0 0 6px #00bfff',
-    }}
+    className="text-neon font-medium text-lg"
   >
     https://t.me/devzahirbot
   </a>
