@@ -155,12 +155,12 @@ pre {
   overflow-x: auto;
   word-wrap: normal;
 }
-/* globals.css or a component-specific CSS file */
 .text-neon {
   color: #00bfff;
-  text-shadow: 0 0 6px #00bfff;
+  transition: color 0.25s ease-in-out;
 }
+
 .text-neon:hover {
   color: #33ccff;
-  text-shadow: 0 0 8px #33ccff;
 }
+
