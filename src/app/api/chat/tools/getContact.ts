@@ -7,7 +7,7 @@ export const getContact = tool({
   execute: async () => {
     return (
       `📬 You can contact me directly via Telegram:\n` +
-      `👉 <a href="https://t.me/devzahirbot">@DevZahirBot</a>\n\n` +
+      `👉 <a href="https://t.me/devzahirbot?start=start">@DevZahirBot</a>\n\n` +
       `💳 Instant bookings & payments are accepted via:\n` +
       `• Stripe (Debit/Credit Card)\n` +
       `• Bitcoin (BTC)\n` +
