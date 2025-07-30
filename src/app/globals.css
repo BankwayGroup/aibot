@@ -163,9 +163,4 @@ pre {
 .text-neon:hover {
   color: #33ccff;
 }
-.fixed.top-0.right-0.left-0.z-50 {
-  opacity: 0.05 !important; /* Very faint visibility */
-  pointer-events: none !important; /* Prevent interaction */
-  filter: blur(1px); /* Optional: adds a subtle blur */
-  transition: opacity 0.3s ease, filter 0.3s ease;
-}
+
