@@ -45,11 +45,18 @@ export default function Home() {
   const router = useRouter();
   const [isDark, setIsDark] = useState(false);
 
- useEffect(() => {
-  if (typeof window !== 'undefined') {
-    document.documentElement.classList.add('dark');
-  }
-}, []);
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      setIsMobile(window.innerWidth < 640);
+      document.documentElement.classList.add('dark');
+
+      const html = document.documentElement;
+      setIsDark(html.classList.contains('dark'));
+    }
+  }, []);
+
+  useEffect(() => {
+    if (!typedRef.current) return;
 
     const isMobile = typeof window !== 'undefined' && window.innerWidth < 640;
 
