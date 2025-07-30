@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import React, { useState } from 'react';
-import Presentation from '../presentation'; // ✅ Correct
+import Presentation from '../presentation';
 
 // First variant
 export function PresentationVariant1() {
