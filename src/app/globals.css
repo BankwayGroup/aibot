@@ -214,3 +214,50 @@ pre {
 .sticky.bottom-0 svg {
   stroke: #aaa !important;
 }
+/* Main sticky bar container */
+.sticky.bottom-0 {
+  background-color: #2b2d31 !important; /* Discord sidebar grey */
+  color: #ffffff !important;
+  border-top: 1px solid #1e1f22 !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+}
+
+/* Form wrapper and input area */
+.sticky.bottom-0 form,
+.sticky.bottom-0 .flex,
+.sticky.bottom-0 .relative,
+.sticky.bottom-0 input {
+  background-color: #404249 !important; /* Input darker grey */
+  color: #f2f3f5 !important;
+  border: 1px solid #1e1f22 !important;
+  border-radius: 6px !important;
+  box-shadow: none !important;
+}
+
+/* Buttons inside the sticky bar */
+.sticky.bottom-0 button {
+  background-color: #404249 !important;
+  color: #f2f3f5 !important;
+  border: none !important;
+}
+
+.sticky.bottom-0 button:hover {
+  background-color: #50535a !important;
+}
+
+/* Placeholder and text inside inputs */
+.sticky.bottom-0 input::placeholder {
+  color: #999 !important;
+}
+
+/* Icons (SVGs) */
+.sticky.bottom-0 svg {
+  stroke: #b5bac1 !important;
+}
+
+/* Universal reset inside sticky bar */
+.sticky.bottom-0 * {
+  font-family: system-ui, sans-serif !important;
+  box-shadow: none !important;
+}
