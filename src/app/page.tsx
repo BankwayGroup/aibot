@@ -44,6 +44,7 @@ export default function Home() {
   const typedRef = useRef<HTMLSpanElement>(null);
   const router = useRouter();
   const [isDark, setIsDark] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
