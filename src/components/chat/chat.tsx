@@ -6,6 +6,7 @@ import { useSearchParams } from 'next/navigation';
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { toast } from 'sonner';
 import { ArrowLeft } from 'lucide-react'; // If you want a left arrow icon, else use any icon or text
+import { useRouter } from 'next/navigation';
 
 
 // Component imports
@@ -122,6 +123,8 @@ const Chat = () => {
   const [autoSubmitted, setAutoSubmitted] = useState(false);
   const [loadingSubmit, setLoadingSubmit] = useState(false);
   const [isTalking, setIsTalking] = useState(false);
+  const router = useRouter(); // ✅ Moved inside here
+
 
   const {
     messages,
@@ -303,6 +306,7 @@ const Chat = () => {
     className={`transition-all duration-300 ease-in-out ${hasActiveTool ? 'pt-6 pb-0' : 'py-6'}`}
   >
     {/* Back Button */}
+    {/* Back Button */}
     <div className="px-4 mb-2">
       <button
         onClick={() => window.history.back()}
@@ -312,7 +316,7 @@ const Chat = () => {
         Back
       </button>
     </div>
-
+    
     <div className="flex justify-center">
       <ClientOnly>
         <Avatar
