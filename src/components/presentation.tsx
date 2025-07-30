@@ -19,6 +19,23 @@ export function Presentation() {
   };
 
   return (
+    <div className="flex flex-col items-center space-y-4">
+      <Image
+        src={imgError ? profile.fallbackSrc : profile.src}
+        alt="Profile"
+        width={80} // ← smaller size
+        height={80}
+        className="rounded-full shadow-md"
+        onError={() => setImgError(true)}
+      />
+      <h2 className="text-xl font-semibold">{profile.name}</h2>
+      <p className="text-sm text-gray-400">{profile.age} · {profile.location}</p>
+      <p className="text-center whitespace-pre-line text-sm text-gray-300">{profile.description}</p>
+    </div>
+  );
+}
+
+  return (
     <motion.div
       initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}
