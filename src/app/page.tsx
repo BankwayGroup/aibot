@@ -45,7 +45,12 @@ export default function Home() {
   const router = useRouter();
   const [isDark, setIsDark] = useState(false);
 
-  useEffect(() => {
+ useEffect(() => {
+  if (typeof window !== 'undefined') {
+    document.documentElement.classList.add('dark');
+  }
+}, []);
+
     const isMobile = typeof window !== 'undefined' && window.innerWidth < 640;
 
     const typed = new Typed(typedRef.current, {
