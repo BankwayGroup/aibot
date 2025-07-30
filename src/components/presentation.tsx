@@ -14,7 +14,7 @@ export function Presentation() {
     location: 'Los Angeles, California',
     description:
       "Hey 👋\nI'm Dev Zahir. I'm a fullstack developer who builds custom websites, bots, and backend systems. I work with Python, PHP, Go, and JavaScript — and I'm passionate about tech, automation, and building tools that actually solve problems.",
-    src: '/profil-raph.png',
+    src: '/landing-memojis.png',
     fallbackSrc: 'https://images.unsplash.com/photo-1610', // example fallback
   };
 
