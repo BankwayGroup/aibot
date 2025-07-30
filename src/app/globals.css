@@ -175,3 +175,42 @@ pre {
   height: 0 !important;
   pointer-events: none !important;
 }
+/* Force bottom sticky area to Discord grey */
+.sticky.bottom-0 {
+  background-color: #2b2d31 !important; /* Discord dark grey */
+  color: #ffffff !important;
+}
+
+.sticky.bottom-0 * {
+  background-color: transparent !important;
+  color: #ddd !important;
+  border-color: #404249 !important;
+  box-shadow: none !important;
+}
+
+/* Override white backgrounds, light borders, and input */
+.sticky.bottom-0 input {
+  background-color: #404249 !important;
+  color: #fff !important;
+  border: none !important;
+}
+
+.sticky.bottom-0 button {
+  background-color: #404249 !important;
+  color: #fff !important;
+  border: 1px solid #555 !important;
+}
+
+.sticky.bottom-0 button:hover {
+  background-color: #50535a !important;
+}
+
+/* Optional: darken form input area */
+.sticky.bottom-0 form .flex {
+  background-color: #404249 !important;
+}
+
+/* Optional: darken hover and icon area */
+.sticky.bottom-0 svg {
+  stroke: #aaa !important;
+}
