@@ -3,7 +3,7 @@ import { ChevronRight, Link } from 'lucide-react';
 import { Separator } from '@/components/ui/separator';
 
 // Enhanced project content array with all projects
-const PROJECT_CONTENT = [
+const PROJECT_CONTENT: ProjectProps[] = [
   {
     title: 'SmartChat AI Assistant',
     description:
@@ -31,6 +31,19 @@ const PROJECT_CONTENT = [
       'Designed and developed a sleek personal portfolio site to showcase projects, technical skills, and professional experience. Leveraged Next.js and Tailwind CSS for fast, responsive performance and a modern, clean aesthetic optimized for desktop and mobile.',
     techStack: ['Next.js', 'Tailwind CSS', 'Vercel'],
     date: '2024',
+    links: [
+      { name: 'Live Site', url: 'https://aizahir.netlify.app' },
+    ],
+  },
+  {
+    title: 'Main Developer Services Website',
+    description:
+      'Created the primary site for client acquisition, bookings, and showcasing premium development packages. Integrated Stripe payments, Telegram bot triggers, and automated quoting workflows.',
+    techStack: ['Next.js', 'Tailwind CSS', 'Stripe', 'MongoDB'],
+    date: '2025',
+    links: [
+      { name: 'Visit devzahir.com', url: 'https://devzahir.com' },
+    ],
   },
   {
     title: 'Shopify Store Setup & Customization',
@@ -45,6 +58,12 @@ const PROJECT_CONTENT = [
       'Developed a Telegram bot that manages scheduled notifications and reminders for events, enhancing attendee engagement and communication. Built with python-telegram-bot and deployed on Heroku for reliable uptime and scalability.',
     techStack: ['Python', 'python-telegram-bot', 'Heroku'],
     date: '2024',
+    links: [
+      { name: '@DevZahirBot', url: 'https://t.me/devzahirbot' },
+    ],
+    images: [
+      { src: '/devzahir2.png', alt: 'Telegram Bot Screenshot' },
+    ],
   },
 ];
 
