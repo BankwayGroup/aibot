@@ -49,10 +49,10 @@ export default function Home() {
   useEffect(() => {
     if (typeof window !== 'undefined') {
       setIsMobile(window.innerWidth < 640);
-      document.documentElement.classList.add('dark');
+      document.documentElement.classList.add('light');
 
       const html = document.documentElement;
-      setIsDark(html.classList.contains('dark'));
+      setIsDark(html.classList.contains('light'));
     }
   }, []);
 
@@ -95,7 +95,7 @@ export default function Home() {
 
     if (typeof window !== 'undefined') {
       const html = document.documentElement;
-      setIsDark(html.classList.contains('dark'));
+      setIsDark(html.classList.contains('light'));
     }
 
     return () => typed.destroy();
@@ -104,11 +104,11 @@ export default function Home() {
   // Toggle dark mode by toggling 'dark' class on <html>
   const toggleDarkMode = () => {
     const html = document.documentElement;
-    if (html.classList.contains('dark')) {
-      html.classList.remove('dark');
+    if (html.classList.contains('light')) {
+      html.classList.remove('light');
       setIsDark(false);
     } else {
-      html.classList.add('dark');
+      html.classList.add('light');
       setIsDark(true);
     }
   };
