@@ -175,32 +175,6 @@ body {
   color: #ececf1 !important; /* ChatGPT text color */
 }
 
-a {
-  color: #10a37f !important; /* ChatGPT green link color */
-}
-
-input,
-textarea,
-button {
-  background-color: #40414f !important;
-  color: #ececf1 !important;
-  border: none !important;
-}
-
-input::placeholder,
-textarea::placeholder {
-  color: #a1a1aa !important;
-}
-/* Make all text elements inherit white/light font color */
-p, span, li, ul, ol, h1, h2, h3, h4, h5, h6, strong, em, small, label {
-  color: #ececf1 !important;
-}
-
-/* Fix for SVG icons (e.g., react-icons) */
-svg {
-  color: #ececf1 !important;
-  fill: currentColor !important;
-}
 
 /* Force all text and icons inside components */
 * {
