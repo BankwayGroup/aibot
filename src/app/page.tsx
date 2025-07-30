@@ -125,20 +125,7 @@ export default function Home() {
   return (
     <>
       <div className="absolute top-6 right-8 z-20 flex items-center gap-4">
-        {/* Dark Mode Toggle Button */}
-        <button
-          onClick={toggleDarkMode}
-          aria-label="Toggle Dark Mode"
-          title={isDark ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
-          className="flex items-center justify-center rounded-full p-2 text-gray-700 hover:bg-gray-200 dark:text-gray-200 dark:hover:bg-gray-700 transition focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-blue-500"
-          type="button"
-        >
-          {isDark ? (
-            <Sun className="h-6 w-6" />
-          ) : (
-            <Moon className="h-6 w-6" />
-          )}
-        </button>
+  
 
         <GithubButton
           animationDuration={1.5}
