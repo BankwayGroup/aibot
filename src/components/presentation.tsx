@@ -265,4 +265,8 @@ export function PresentationVariant5() {
   );
 }
 
-export default Presentation;
+export default function Presentation() {
+  // Change this to whichever variant you want as default
+  return <PresentationVariant1 />;
+}
+
