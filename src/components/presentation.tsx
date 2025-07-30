@@ -3,7 +3,6 @@
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import React, { useState } from 'react';
-import Presentation from '../presentation';
 
 // First variant
 export function PresentationVariant1() {
@@ -265,9 +264,3 @@ export function PresentationVariant5() {
     </div>
   );
 }
-
-export default function Presentation() {
-  // Change this to whichever variant you want as default
-  return <PresentationVariant1 />;
-}
-
