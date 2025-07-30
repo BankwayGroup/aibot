@@ -10,7 +10,8 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-
+  --color-quick-questions-bg: var(--quick-questions-bg, var(--background));
+  --color-quick-questions-text: var(--quick-questions-text, var(--foreground));
   --color-card: var(--card);
   --color-card-foreground: var(--card-foreground);
   --color-popover: var(--popover);
@@ -81,6 +82,8 @@
   --sidebar-accent-foreground: oklch(0.21 0.006 285.885);
   --sidebar-border: oklch(0.92 0.004 286.32);
   --sidebar-ring: oklch(0.705 0.015 286.067);
+  --quick-questions-bg: #ffffff; /* or your light bg */
+  --quick-questions-text: #4b5563; /* gray-700 */
 }
 
 /* 🌙 Dark mode override */
@@ -116,6 +119,8 @@
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.552 0.016 285.938);
+    --quick-questions-bg: #1f2937; /* Tailwind gray-900 / dark gray */
+  --quick-questions-text: #d1d5db; /* Tailwind gray-300 / light gray */
 }
 
 /* Tailwind base layer overrides */
