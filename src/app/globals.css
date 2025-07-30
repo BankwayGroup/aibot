@@ -10,8 +10,7 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-  --color-quick-questions-bg: var(--quick-questions-bg, var(--background));
-  --color-quick-questions-text: var(--quick-questions-text, var(--foreground));
+
   --color-card: var(--card);
   --color-card-foreground: var(--card-foreground);
   --color-popover: var(--popover);
@@ -82,8 +81,6 @@
   --sidebar-accent-foreground: oklch(0.21 0.006 285.885);
   --sidebar-border: oklch(0.92 0.004 286.32);
   --sidebar-ring: oklch(0.705 0.015 286.067);
-  --quick-questions-bg: #ffffff; /* or your light bg */
-  --quick-questions-text: #4b5563; /* gray-700 */
 }
 
 /* 🌙 Dark mode override */
@@ -119,8 +116,6 @@
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.552 0.016 285.938);
-    --quick-questions-bg: #1f2937; /* Tailwind gray-900 / dark gray */
-  --quick-questions-text: #d1d5db; /* Tailwind gray-300 / light gray */
 }
 
 /* Tailwind base layer overrides */
@@ -169,95 +164,8 @@ pre {
   color: #33ccff;
 }
 .fixed.top-0.right-0.left-0.z-50 {
-  display: none !important;
-  visibility: hidden !important;
-  opacity: 0 !important;
-  height: 0 !important;
-  pointer-events: none !important;
-}
-/* Force bottom sticky area to Discord grey */
-.sticky.bottom-0 {
-  background-color: #2b2d31 !important; /* Discord dark grey */
-  color: #ffffff !important;
-}
-
-.sticky.bottom-0 * {
-  background-color: transparent !important;
-  color: #ddd !important;
-  border-color: #404249 !important;
-  box-shadow: none !important;
-}
-
-/* Override white backgrounds, light borders, and input */
-.sticky.bottom-0 input {
-  background-color: #404249 !important;
-  color: #fff !important;
-  border: none !important;
-}
-
-.sticky.bottom-0 button {
-  background-color: #404249 !important;
-  color: #fff !important;
-  border: 1px solid #555 !important;
-}
-
-.sticky.bottom-0 button:hover {
-  background-color: #50535a !important;
-}
-
-/* Optional: darken form input area */
-.sticky.bottom-0 form .flex {
-  background-color: #404249 !important;
-}
-
-/* Optional: darken hover and icon area */
-.sticky.bottom-0 svg {
-  stroke: #aaa !important;
-}
-/* Main sticky bar container */
-.sticky.bottom-0 {
-  background-color: #2b2d31 !important; /* Discord sidebar grey */
-  color: #ffffff !important;
-  border-top: 1px solid #1e1f22 !important;
-  box-shadow: none !important;
-  backdrop-filter: none !important;
-}
-
-/* Form wrapper and input area */
-.sticky.bottom-0 form,
-.sticky.bottom-0 .flex,
-.sticky.bottom-0 .relative,
-.sticky.bottom-0 input {
-  background-color: #404249 !important; /* Input darker grey */
-  color: #f2f3f5 !important;
-  border: 1px solid #1e1f22 !important;
-  border-radius: 6px !important;
-  box-shadow: none !important;
-}
-
-/* Buttons inside the sticky bar */
-.sticky.bottom-0 button {
-  background-color: #404249 !important;
-  color: #f2f3f5 !important;
-  border: none !important;
-}
-
-.sticky.bottom-0 button:hover {
-  background-color: #50535a !important;
-}
-
-/* Placeholder and text inside inputs */
-.sticky.bottom-0 input::placeholder {
-  color: #999 !important;
-}
-
-/* Icons (SVGs) */
-.sticky.bottom-0 svg {
-  stroke: #b5bac1 !important;
-}
-
-/* Universal reset inside sticky bar */
-.sticky.bottom-0 * {
-  font-family: system-ui, sans-serif !important;
-  box-shadow: none !important;
+  opacity: 0.05 !important; /* Very faint visibility */
+  pointer-events: none !important; /* Prevent interaction */
+  filter: blur(1px); /* Optional: adds a subtle blur */
+  transition: opacity 0.3s ease, filter 0.3s ease;
 }
