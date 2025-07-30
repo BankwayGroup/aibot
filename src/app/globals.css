@@ -169,3 +169,74 @@ pre {
   color: #33ccff;
 }
 
+/* globals.css - ChatGPT dark theme override */
+body {
+  background-color: #343541 !important; /* ChatGPT dark background */
+  color: #ececf1 !important; /* ChatGPT text color */
+}
+
+a {
+  color: #10a37f !important; /* ChatGPT green link color */
+}
+
+input,
+textarea,
+button {
+  background-color: #40414f !important;
+  color: #ececf1 !important;
+  border: none !important;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #a1a1aa !important;
+}
+/* Force ChatGPT-style dark mode */
+body, html {
+  background-color: #343541 !important;
+  color: #ececf1 !important;
+  font-family: system-ui, sans-serif !important;
+}
+
+/* Inputs, buttons, textareas */
+input, textarea, button, select {
+  background-color: #40414f !important;
+  color: #ececf1 !important;
+  border: none !important;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #a1a1aa !important;
+}
+
+/* Links */
+a {
+  color: #10a37f !important;
+}
+
+/* All cards, sections, etc. */
+div, section, article, header, footer, aside {
+  background-color: transparent !important;
+  color: inherit !important;
+  border: none !important;
+}
+
+/* Scrollbars (optional) */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: #555 !important;
+  border-radius: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #343541 !important;
+}
+
+/* Force Tailwind variables (if used) */
+:root {
+  --background: #343541 !important;
+  --foreground: #ececf1 !important;
+  --primary: #10a37f !important;
+}
