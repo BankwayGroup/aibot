@@ -165,3 +165,10 @@ pre {
 .text-neon:hover {
   color: #67e8f9;
 }
+.fixed.top-0.right-0.left-0.z-50 {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  height: 0 !important;
+  pointer-events: none !important;
+}
