@@ -4,10 +4,10 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import React, { useState } from 'react';
 
-export function Presentation() {
+// First variant
+export function PresentationVariant1() {
   const [imgError, setImgError] = useState(false);
 
-  // Personal information
   const profile = {
     name: 'Dev Zahir',
     age: '28 years old',
@@ -15,7 +15,7 @@ export function Presentation() {
     description:
       "Hey 👋\nI'm Dev Zahir. I'm a fullstack developer who builds custom websites, bots, and backend systems. I work with Python, PHP, Go, and JavaScript — and I'm passionate about tech, automation, and building tools that actually solve problems.",
     src: '/devzahir.png',
-    fallbackSrc: 'https://images.unsplash.com/photo-1610', // example fallback
+    fallbackSrc: 'https://images.unsplash.com/photo-1610',
   };
 
   return (
@@ -23,17 +23,35 @@ export function Presentation() {
       <Image
         src={imgError ? profile.fallbackSrc : profile.src}
         alt="Profile"
-        width={80} // ← smaller size
+        width={80}
         height={80}
         className="rounded-full shadow-md"
         onError={() => setImgError(true)}
       />
       <h2 className="text-xl font-semibold">{profile.name}</h2>
-      <p className="text-sm text-gray-400">{profile.age} · {profile.location}</p>
-      <p className="text-center whitespace-pre-line text-sm text-gray-300">{profile.description}</p>
+      <p className="text-sm text-gray-400">
+        {profile.age} · {profile.location}
+      </p>
+      <p className="text-center whitespace-pre-line text-sm text-gray-300">
+        {profile.description}
+      </p>
     </div>
   );
 }
+
+// Second variant
+export function PresentationVariant2() {
+  const [imgError, setImgError] = useState(false);
+
+  const profile = {
+    name: 'Dev Zahir',
+    age: '28 years old',
+    location: 'Los Angeles, California',
+    description:
+      "Hey 👋\nI'm Dev Zahir. I'm a fullstack developer who builds custom websites, bots, and backend systems. I work with Python, PHP, Go, and JavaScript — and I'm passionate about tech, automation, and building tools that actually solve problems.",
+    src: '/devzahir.png',
+    fallbackSrc: 'https://images.unsplash.com/photo-1610',
+  };
 
   return (
     <motion.div
@@ -62,6 +80,16 @@ export function Presentation() {
       </p>
     </motion.div>
   );
+}
+
+// Third variant
+export function PresentationVariant3() {
+  const profile = {
+    name: 'Dev Zahir',
+    description:
+      "Hey 👋\nI'm Dev Zahir. I'm a fullstack developer who builds custom websites, bots, and backend systems. I work with Python, PHP, Go, and JavaScript — and I'm passionate about tech, automation, and building tools that actually solve problems.",
+    src: '/devzahir.png',
+  };
 
   return (
     <div className="flex flex-col items-center justify-center gap-4 p-4">
@@ -88,7 +116,17 @@ export function Presentation() {
       </p>
     </div>
   );
+}
 
+// Fourth variant
+export function PresentationVariant4() {
+  const profile = {
+    name: 'Dev Zahir',
+    description:
+      "Hey 👋\nI'm Dev Zahir. I'm a fullstack developer who builds custom websites, bots, and backend systems. I work with Python, PHP, Go, and JavaScript — and I'm passionate about tech, automation, and building tools that actually solve problems.",
+    src: '/devzahir.png',
+    fallbackSrc: 'https://images.unsplash.com/photo-1610',
+  };
 
   return (
     <section className="text-center space-y-4 px-4">
@@ -107,6 +145,21 @@ export function Presentation() {
       <p className="whitespace-pre-line text-sm">{profile.description}</p>
     </section>
   );
+}
+
+// Fifth variant - big detailed layout
+export function PresentationVariant5() {
+  const [imgError, setImgError] = useState(false);
+
+  const profile = {
+    name: 'Dev Zahir',
+    age: '28 years old',
+    location: 'Los Angeles, California',
+    description:
+      "Hey 👋\nI'm Dev Zahir. I'm a fullstack developer who builds custom websites, bots, and backend systems. I work with Python, PHP, Go, and JavaScript — and I'm passionate about tech, automation, and building tools that actually solve problems.",
+    src: '/devzahir.png',
+    fallbackSrc: 'https://images.unsplash.com/photo-1610',
+  };
 
   // Animation variants for text elements
   const textVariants = {
@@ -132,8 +185,20 @@ export function Presentation() {
     },
   };
 
+  const tags = [
+    'AI',
+    'Full-Stack Developer',
+    'Los Angeles',
+    'Athlete',
+    'Startup Hustler',
+    'Musician',
+    'Tech Enthusiast',
+    'Family Man',
+    'Rapid Learner',
+  ];
+
   return (
-       <div className="mx-auto w-full max-w-5xl py-6 font-sans">
+    <div className="mx-auto w-full max-w-5xl py-6 font-sans">
       <div className="grid grid-cols-1 items-center gap-10 md:grid-cols-2">
         {/* Image section */}
         <div className="relative mx-auto aspect-square w-full max-w-sm">
@@ -158,11 +223,7 @@ export function Presentation() {
 
         {/* Text content section */}
         <div className="flex flex-col space-y-4">
-          <motion.div
-            initial="hidden"
-            animate="visible"
-            variants={textVariants}
-          >
+          <motion.div initial="hidden" animate="visible" variants={textVariants}>
             <h1 className="from-foreground to-muted-foreground bg-gradient-to-r bg-clip-text text-xl font-semibold text-transparent md:text-3xl">
               {profile.name}
             </h1>
@@ -172,7 +233,6 @@ export function Presentation() {
               <p className="text-muted-foreground">{profile.location}</p>
             </div>
           </motion.div>
-
 
           <motion.p
             initial="hidden"
@@ -190,17 +250,14 @@ export function Presentation() {
             transition={{ delay: 0.6, duration: 0.5 }}
             className="mt-4 flex flex-wrap gap-2"
           >
-            {['AI', 'Full-Stack Developer', 'Los Angeles', 'Athlete', 'Startup Hustler', 'Musician', 'Tech Enthusiast', 'Family Man', 'Rapid Learner']
-.map(
-              (tag) => (
-                <span
-                  key={tag}
-                  className="bg-secondary text-secondary-foreground rounded-full px-3 py-1 text-sm"
-                >
-                  {tag}
-                </span>
-              )
-            )}
+            {tags.map((tag) => (
+              <span
+                key={tag}
+                className="bg-secondary text-secondary-foreground rounded-full px-3 py-1 text-sm"
+              >
+                {tag}
+              </span>
+            ))}
           </motion.div>
         </div>
       </div>
