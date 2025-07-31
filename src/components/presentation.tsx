@@ -4,7 +4,10 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import React, { useState } from 'react';
 
-import Presentation from '../presentation'; {
+// If you want to import Presentation component elsewhere, do it there:
+// import Presentation from '../presentation';
+
+export default function Profile() {
   const [imgError, setImgError] = useState(false);
 
   const profile = {
