@@ -25,16 +25,16 @@ export function Presentation() {
       transition={{ duration: 0.4 }}
       className="flex flex-col items-center justify-center gap-4 rounded-xl bg-muted/30 p-6 text-center shadow"
     >
-      <div className="relative h-[180px] w-[180px] rounded-full bg-white shadow">
-        <Image
-          src={imgError ? profile.fallbackSrc : profile.src}
-          alt={`Profile picture of ${profile.name}`}
-          fill
-          className="object-contain rounded-full"
-          onError={() => setImgError(true)}
-          priority
-        />
-      </div>
+<div className="relative h-[180px] w-full max-w-3xl overflow-hidden rounded-xl bg-white shadow">
+  <Image
+    src={imgError ? profile.fallbackSrc : profile.src}
+    alt={`Banner image of ${profile.name}`}
+    fill
+    className="object-cover"
+    onError={() => setImgError(true)}
+    priority
+  />
+</div>
 
       <h2 className="text-xl font-semibold">{profile.name}</h2>
       <p className="text-muted-foreground text-sm">
