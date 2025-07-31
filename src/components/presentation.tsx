@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import React, { useState } from 'react';
 
-export function Presentation() {
+export default function Presentation() {
   const [imgError, setImgError] = useState(false);
 
   const profile = {
@@ -138,5 +138,3 @@ export function Presentation() {
     </div>
   );
 }
-
-export default Presentation;
