@@ -60,4 +60,4 @@ export const packages = [
   },
 ];
 
-export const buyLink = 'https://www.fiverr.com/s/m5Vb1g8';
+export const buyLink = 'https://devzahir.com/#packages';
