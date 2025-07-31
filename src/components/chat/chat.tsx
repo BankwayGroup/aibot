@@ -60,6 +60,7 @@ const Avatar = dynamic<AvatarProps>(
 
         return () => clearTimeout(timer);
       }, []);
+// Correct dynamic Avatar component (no image)
 const Avatar = dynamic<AvatarProps>(
   () =>
     Promise.resolve(({ hasActiveTool, videoRef, isTalking }: AvatarProps) => {
@@ -86,7 +87,7 @@ const Avatar = dynamic<AvatarProps>(
             className="relative cursor-pointer"
             onClick={() => (window.location.href = '/')}
           >
-            {/* Image removed — keeping layout intact */}
+            {/* Image removed — still clickable */}
           </div>
         </div>
       );
@@ -94,9 +95,7 @@ const Avatar = dynamic<AvatarProps>(
   { ssr: false }
 );
 
-
-
-
+// ✅ Continue your Chat component *after* the Avatar definition
 const MOTION_CONFIG = {
   initial: { opacity: 0, y: 20 },
   animate: { opacity: 1, y: 0 },
@@ -106,6 +105,9 @@ const MOTION_CONFIG = {
     ease: 'easeOut',
   },
 };
+
+// ... rest of Chat component continues
+
 
 const Chat = () => {
   const videoRef = useRef<HTMLVideoElement | null>(null);
