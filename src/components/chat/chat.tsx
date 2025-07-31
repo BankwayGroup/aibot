@@ -56,19 +56,6 @@ const Avatar = dynamic<AvatarProps>(
       useEffect(() => {
         const timer = setTimeout(() => {
           setShowImage(false);
-        }, 1000); // fade out after 1 second
-
-        return () => clearTimeout(timer);
-      }, []);
-// Correct dynamic Avatar component (no image)
-const Avatar = dynamic<AvatarProps>(
-  () =>
-    Promise.resolve(({ hasActiveTool, videoRef, isTalking }: AvatarProps) => {
-      const [showImage, setShowImage] = useState(true);
-
-      useEffect(() => {
-        const timer = setTimeout(() => {
-          setShowImage(false);
         }, 1000);
         return () => clearTimeout(timer);
       }, []);
@@ -90,6 +77,7 @@ const Avatar = dynamic<AvatarProps>(
     }),
   { ssr: false }
 );
+
 
 // ✅ Continue your Chat component *after* the Avatar definition
 const MOTION_CONFIG = {
