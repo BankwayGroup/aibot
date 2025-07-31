@@ -83,13 +83,13 @@ const Avatar = dynamic<AvatarProps>(
             className="relative cursor-pointer"
             onClick={() => (window.location.href = '/')}
           >
-            {/* Image removed — still clickable */}
+            {/* Avatar image removed */}
           </div>
         </div>
       );
     }),
   { ssr: false }
-); // ✅ Only this one is needed
+);
 
 // ✅ Continue your Chat component *after* the Avatar definition
 const MOTION_CONFIG = {
