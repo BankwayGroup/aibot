@@ -60,7 +60,9 @@ const Avatar = dynamic<AvatarProps>(
 
         return () => clearTimeout(timer);
       }, []);
-
+const Avatar = dynamic<AvatarProps>(
+  () =>
+    Promise.resolve(({ hasActiveTool, videoRef, isTalking }: AvatarProps) => {
       const isIOS = () => {
         const userAgent = window.navigator.userAgent;
         const platform = window.navigator.platform;
@@ -75,18 +77,23 @@ const Avatar = dynamic<AvatarProps>(
       };
 
       return (
-<div
-  className={`flex items-center justify-center rounded-full transition-all duration-300 ${
-    hasActiveTool ? 'h-20 w-20' : 'h-28 w-28'
-  }`}
->
-  <div
-    className="relative cursor-pointer"
-    onClick={() => (window.location.href = '/')}
-  >
-    {/* Avatar image removed */}
-  </div>
-</div>
+        <div
+          className={`flex items-center justify-center rounded-full transition-all duration-300 ${
+            hasActiveTool ? 'h-20 w-20' : 'h-28 w-28'
+          }`}
+        >
+          <div
+            className="relative cursor-pointer"
+            onClick={() => (window.location.href = '/')}
+          >
+            {/* Image removed — keeping layout intact */}
+          </div>
+        </div>
+      );
+    }),
+  { ssr: false }
+);
+
 
 
 
