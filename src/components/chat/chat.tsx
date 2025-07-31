@@ -75,34 +75,18 @@ const Avatar = dynamic<AvatarProps>(
       };
 
       return (
-        <div
-          className={`flex items-center justify-center rounded-full transition-all duration-300 ${
-            hasActiveTool ? 'h-20 w-20' : 'h-28 w-28'
-          }`}
-        >
-          <div
-            className="relative cursor-pointer"
-            onClick={() => (window.location.href = '/')}
-          >
-            <AnimatePresence>
-              {showImage && (
-                <motion.img
-                  src="/landing-memojis.png"
-                  alt="avatar"
-                  className="max-h-32 max-w-32 object-contain"
-                  initial={{ opacity: 1 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ duration: 0.6 }} // smooth and quick
-                />
-              )}
-            </AnimatePresence>
-          </div>
-        </div>
-      );
-    }),
-  { ssr: false }
-);
+<div
+  className={`flex items-center justify-center rounded-full transition-all duration-300 ${
+    hasActiveTool ? 'h-20 w-20' : 'h-28 w-28'
+  }`}
+>
+  <div
+    className="relative cursor-pointer"
+    onClick={() => (window.location.href = '/')}
+  >
+    {/* Avatar image removed */}
+  </div>
+</div>
 
 
 
