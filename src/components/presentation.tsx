@@ -23,26 +23,25 @@ export function Presentation() {
       initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4 }}
-      className="flex flex-col items-center justify-center gap-4 rounded-xl bg-muted/30 p-6 text-center shadow"
+      className="flex flex-col items-center justify-center gap-6 rounded-xl bg-muted/30 p-6 text-center shadow"
     >
-<div className="relative h-[180px] w-full max-w-3xl overflow-hidden rounded-xl bg-white shadow">
-  <Image
-    src={imgError ? profile.fallbackSrc : profile.src}
-    alt={`Banner image of ${profile.name}`}
-    fill
-    className="object-cover"
-    onError={() => setImgError(true)}
-    priority
-  />
-</div>
+      {/* Image with responsive classes */}
+      <Image
+        src={imgError ? profile.fallbackSrc : profile.src}
+        alt={profile.name}
+        width={500}
+        height={500}
+        priority
+        onError={() => setImgError(true)}
+        className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl h-auto object-cover rounded-2xl mx-auto"
+      />
 
-      <h2 className="text-xl font-semibold">{profile.name}</h2>
-      <p className="text-muted-foreground text-sm">
-        {profile.age} • {profile.location}
-      </p>
-      <p className="whitespace-pre-wrap text-sm leading-relaxed text-gray-800 dark:text-gray-300">
-        {profile.description}
-      </p>
+      {/* Text content */}
+      <div className="mt-4 space-y-2">
+        <h1 className="text-2xl font-bold">{profile.name}</h1>
+        <p className="text-sm text-muted-foreground">{profile.location}</p>
+        <p className="whitespace-pre-line text-base leading-relaxed">{profile.description}</p>
+      </div>
     </motion.div>
   );
 
