@@ -64,18 +64,14 @@ const Avatar = dynamic<AvatarProps>(
 const Avatar = dynamic<AvatarProps>(
   () =>
     Promise.resolve(({ hasActiveTool, videoRef, isTalking }: AvatarProps) => {
-      const isIOS = () => {
-        const userAgent = window.navigator.userAgent;
-        const platform = window.navigator.platform;
-        const maxTouchPoints = window.navigator.maxTouchPoints || 0;
+      const [showImage, setShowImage] = useState(true);
 
-        const isIOSByUA = /iPad|iPhone|iPod/.test(userAgent);
-        const isIOSByPlatform = /iPad|iPhone|iPod/.test(platform);
-        const isIPadOS = platform === 'MacIntel' && maxTouchPoints > 1;
-        const isSafari = /Safari/.test(userAgent) && !/Chrome/.test(userAgent);
-
-        return isIOSByUA || isIOSByPlatform || isIPadOS || isSafari;
-      };
+      useEffect(() => {
+        const timer = setTimeout(() => {
+          setShowImage(false);
+        }, 1000);
+        return () => clearTimeout(timer);
+      }, []);
 
       return (
         <div
@@ -93,7 +89,7 @@ const Avatar = dynamic<AvatarProps>(
       );
     }),
   { ssr: false }
-);
+); // ✅ Only this one is needed
 
 // ✅ Continue your Chat component *after* the Avatar definition
 const MOTION_CONFIG = {
