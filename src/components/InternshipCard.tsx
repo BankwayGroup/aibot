@@ -7,7 +7,6 @@ import { useRouter } from 'next/navigation';
 
 const InternshipCard = () => {
   const [isOpen, setIsOpen] = useState(false); // ✅ Now valid here
-  const router = useRouter();
 
   const handleContactMe = () => {
     setIsOpen(false);
