@@ -5,9 +5,14 @@ import { CalendarDays, Code2, Globe } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 
 const InternshipCard = () => {
-const openTelegram = () => {
-  window.open('https://t.me/devzahirbot?start=start', '_blank');
-};
+  const [isOpen, setIsOpen] = useState(false); // ✅ Now valid here
+  const router = useRouter();
+
+  const handleContactMe = () => {
+    setIsOpen(false);
+    window.location.href = '/chat?query=How%20can%20I%20contact%20you%3F';
+  };
+
   const router = useRouter();
 
   return (
@@ -129,7 +134,7 @@ const openTelegram = () => {
       {/* Contact button */}
       <div className="mt-10 flex justify-center">
  <button
-  onClick={openTelegram}
+  onClick={handleContactMe}
   className="cursor-pointer rounded-full bg-black px-6 py-3 font-semibold text-white transition-colors duration-300 hover:bg-zinc-800"
 >
   Contact me
