@@ -1,5 +1,6 @@
 'use client';
 
+import { useState } from 'react'; // ✅ Import useState
 import { motion } from 'framer-motion';
 import { CalendarDays, Code2, Globe } from 'lucide-react';
 import { useRouter } from 'next/navigation';
