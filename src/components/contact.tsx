@@ -7,7 +7,7 @@ import { ChevronRight } from 'lucide-react';
 export function Contact() {
   const contactInfo = {
     name: 'Dev Zahir',
-    handle: '@devzahirx3',
+    handle: '@DevZahirBot',
     socials: [
       {
         name: 'LinkedIn',
@@ -55,7 +55,7 @@ export function Contact() {
           >
             <div className="flex items-center gap-1">
               <span className="text-base font-medium text-blue-500 hover:underline sm:text-lg">
-                devzahir.com/#contact
+                DevZahir.com/#contact
               </span>
               <ChevronRight className="h-5 w-5 text-blue-500 transition-transform duration-300 group-hover:translate-x-1" />
             </div>
