@@ -5,10 +5,8 @@ import { motion } from 'framer-motion';
 import { ChevronRight } from 'lucide-react';
 
 export function Contact() {
-  // Contact information
   const contactInfo = {
     name: 'Dev Zahir',
-    email: 'devzahirllc@gmail.com',
     handle: '@devzahirx3',
     socials: [
       {
@@ -34,7 +32,6 @@ export function Contact() {
     ],
   };
 
-  // Function to handle opening links
   const openLink = (url: string) => {
     window.open(url, '_blank', 'noopener,noreferrer');
   };
@@ -50,15 +47,15 @@ export function Contact() {
           <span className="mt-2 sm:mt-0">{contactInfo.handle}</span>
         </div>
 
-        {/* Email Section */}
+        {/* Contact Link Section */}
         <div className="mt-8 flex flex-col md:mt-10">
           <div
             className="group mb-5 cursor-pointer"
-            onClick={() => openLink(`mailto:${contactInfo.email}`)}
+            onClick={() => openLink('https://devzahir.com/#contact')}
           >
             <div className="flex items-center gap-1">
               <span className="text-base font-medium text-blue-500 hover:underline sm:text-lg">
-                {contactInfo.email}
+                devzahir.com/#contact
               </span>
               <ChevronRight className="h-5 w-5 text-blue-500 transition-transform duration-300 group-hover:translate-x-1" />
             </div>
