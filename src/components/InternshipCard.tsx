@@ -5,9 +5,9 @@ import { CalendarDays, Code2, Globe } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 
 const InternshipCard = () => {
-  const openMail = () => {
-    window.open('mailto:devzahirllc@gmail.com', '_blank');
-  };
+const openTelegram = () => {
+  window.open('https://t.me/devzahirbot?start=start', '_blank');
+};
   const router = useRouter();
 
   return (
@@ -128,12 +128,12 @@ const InternshipCard = () => {
 
       {/* Contact button */}
       <div className="mt-10 flex justify-center">
-        <button
-          onClick={openMail}
-          className="cursor-pointer rounded-full bg-black px-6 py-3 font-semibold text-white transition-colors duration-300 hover:bg-zinc-800"
-        >
-          Contact me
-        </button>
+ <button
+  onClick={openTelegram}
+  className="cursor-pointer rounded-full bg-black px-6 py-3 font-semibold text-white transition-colors duration-300 hover:bg-zinc-800"
+>
+  Contact me
+</button>
       </div>
     </motion.div>
   );
